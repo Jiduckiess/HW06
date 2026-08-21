@@ -1,0 +1,627 @@
+{
+	"id": "425adb96-2e48-486f-95d5-732a4268ded2",
+	"name": "HW06 API Testing — 23127172",
+	"timestamp": "2026-08-21T15:11:30.264Z",
+	"collection_id": "57612121-81e1ab7e-746e-4eb4-b349-e2a79ab60fda",
+	"folder_id": "57612121-9f6c8abd-3248-4099-9290-7f9a64c74746",
+	"environment_id": "57612121-27bd62e9-77a5-4791-9dba-406de994f4bd",
+	"totalPass": 72,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2026-08-21T15:11:29.213Z",
+	"totalFail": 20,
+	"results": [
+		{
+			"id": "96f9e27a-90eb-4fef-832b-58f001689117",
+			"name": "FR-14 data-driven suite (C1-001 to C1-040)",
+			"url": "http://localhost:3000/api/categories",
+			"time": 3,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"C1-040: expected status": true,
+				"C1-040: no credential or stack-trace leak": true,
+				"C1-040: created category ID": true
+			},
+			"testPassFailCounts": {
+				"C1-001: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-001: no credential or stack-trace leak": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-001: list schema": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-002: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-002: no credential or stack-trace leak": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-002: list schema": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-003: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-003: no credential or stack-trace leak": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-003: list schema": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-004: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-004: no credential or stack-trace leak": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-004: list schema": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-005: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-005: no credential or stack-trace leak": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-005: list schema": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-006: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-006: no credential or stack-trace leak": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-006: created category ID": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-007: expected status": {
+					"pass": 0,
+					"fail": 1
+				},
+				"C1-007: no credential or stack-trace leak": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-008: expected status": {
+					"pass": 0,
+					"fail": 1
+				},
+				"C1-008: no credential or stack-trace leak": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-009: expected status": {
+					"pass": 0,
+					"fail": 1
+				},
+				"C1-009: no credential or stack-trace leak": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-010: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-010: no credential or stack-trace leak": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-010: created category ID": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-011: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-011: no credential or stack-trace leak": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-012: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-012: no credential or stack-trace leak": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-013: expected status": {
+					"pass": 0,
+					"fail": 1
+				},
+				"C1-013: no credential or stack-trace leak": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-014: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-014: no credential or stack-trace leak": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-014: created category ID": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-015: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-015: no credential or stack-trace leak": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-016: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-016: no credential or stack-trace leak": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-017: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-017: no credential or stack-trace leak": {
+					"pass": 0,
+					"fail": 1
+				},
+				"C1-018: expected status": {
+					"pass": 0,
+					"fail": 1
+				},
+				"C1-018: no credential or stack-trace leak": {
+					"pass": 0,
+					"fail": 1
+				},
+				"C1-018: no server error": {
+					"pass": 0,
+					"fail": 1
+				},
+				"C1-019: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-019: no credential or stack-trace leak": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-020: expected status": {
+					"pass": 0,
+					"fail": 1
+				},
+				"C1-020: no credential or stack-trace leak": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-021: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-021: no credential or stack-trace leak": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-022: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-022: no credential or stack-trace leak": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-023: expected status": {
+					"pass": 0,
+					"fail": 1
+				},
+				"C1-023: no credential or stack-trace leak": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-024: expected status": {
+					"pass": 0,
+					"fail": 1
+				},
+				"C1-024: no credential or stack-trace leak": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-025: expected status": {
+					"pass": 0,
+					"fail": 1
+				},
+				"C1-025: no credential or stack-trace leak": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-026: expected status": {
+					"pass": 0,
+					"fail": 1
+				},
+				"C1-026: no credential or stack-trace leak": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-027: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-027: no credential or stack-trace leak": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-028: expected status": {
+					"pass": 0,
+					"fail": 1
+				},
+				"C1-028: no credential or stack-trace leak": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-029: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-029: no credential or stack-trace leak": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-030: expected status": {
+					"pass": 0,
+					"fail": 1
+				},
+				"C1-030: no credential or stack-trace leak": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-031: expected status": {
+					"pass": 0,
+					"fail": 1
+				},
+				"C1-031: no credential or stack-trace leak": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-032: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-032: no credential or stack-trace leak": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-033: expected status": {
+					"pass": 0,
+					"fail": 1
+				},
+				"C1-033: no credential or stack-trace leak": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-034: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-034: no credential or stack-trace leak": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-034: created category ID": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-035: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-035: no credential or stack-trace leak": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-036: expected status": {
+					"pass": 0,
+					"fail": 1
+				},
+				"C1-036: no credential or stack-trace leak": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-037: expected status": {
+					"pass": 0,
+					"fail": 1
+				},
+				"C1-037: no credential or stack-trace leak": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-038: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-038: no credential or stack-trace leak": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-039: expected status": {
+					"pass": 0,
+					"fail": 1
+				},
+				"C1-039: no credential or stack-trace leak": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-039: replacement category remains": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-040: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-040: no credential or stack-trace leak": {
+					"pass": 1,
+					"fail": 0
+				},
+				"C1-040: created category ID": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				2,
+				1,
+				1,
+				1,
+				2,
+				5,
+				4,
+				4,
+				3,
+				4,
+				3,
+				3,
+				3,
+				3,
+				3,
+				3,
+				4,
+				4,
+				2,
+				3,
+				2,
+				3,
+				3,
+				3,
+				2,
+				2,
+				1,
+				3,
+				2,
+				1,
+				1,
+				1,
+				2,
+				2,
+				2,
+				2,
+				2,
+				2,
+				2,
+				3
+			],
+			"allTests": [
+				{
+					"C1-001: expected status": true,
+					"C1-001: no credential or stack-trace leak": true,
+					"C1-001: list schema": true
+				},
+				{
+					"C1-002: expected status": true,
+					"C1-002: no credential or stack-trace leak": true,
+					"C1-002: list schema": true
+				},
+				{
+					"C1-003: expected status": true,
+					"C1-003: no credential or stack-trace leak": true,
+					"C1-003: list schema": true
+				},
+				{
+					"C1-004: expected status": true,
+					"C1-004: no credential or stack-trace leak": true,
+					"C1-004: list schema": true
+				},
+				{
+					"C1-005: expected status": true,
+					"C1-005: no credential or stack-trace leak": true,
+					"C1-005: list schema": true
+				},
+				{
+					"C1-006: expected status": true,
+					"C1-006: no credential or stack-trace leak": true,
+					"C1-006: created category ID": true
+				},
+				{
+					"C1-007: expected status": false,
+					"C1-007: no credential or stack-trace leak": true
+				},
+				{
+					"C1-008: expected status": false,
+					"C1-008: no credential or stack-trace leak": true
+				},
+				{
+					"C1-009: expected status": false,
+					"C1-009: no credential or stack-trace leak": true
+				},
+				{
+					"C1-010: expected status": true,
+					"C1-010: no credential or stack-trace leak": true,
+					"C1-010: created category ID": true
+				},
+				{
+					"C1-011: expected status": true,
+					"C1-011: no credential or stack-trace leak": true
+				},
+				{
+					"C1-012: expected status": true,
+					"C1-012: no credential or stack-trace leak": true
+				},
+				{
+					"C1-013: expected status": false,
+					"C1-013: no credential or stack-trace leak": true
+				},
+				{
+					"C1-014: expected status": true,
+					"C1-014: no credential or stack-trace leak": true,
+					"C1-014: created category ID": true
+				},
+				{
+					"C1-015: expected status": true,
+					"C1-015: no credential or stack-trace leak": true
+				},
+				{
+					"C1-016: expected status": true,
+					"C1-016: no credential or stack-trace leak": true
+				},
+				{
+					"C1-017: expected status": true,
+					"C1-017: no credential or stack-trace leak": false
+				},
+				{
+					"C1-018: expected status": false,
+					"C1-018: no credential or stack-trace leak": false,
+					"C1-018: no server error": false
+				},
+				{
+					"C1-019: expected status": true,
+					"C1-019: no credential or stack-trace leak": true
+				},
+				{
+					"C1-020: expected status": false,
+					"C1-020: no credential or stack-trace leak": true
+				},
+				{
+					"C1-021: expected status": true,
+					"C1-021: no credential or stack-trace leak": true
+				},
+				{
+					"C1-022: expected status": true,
+					"C1-022: no credential or stack-trace leak": true
+				},
+				{
+					"C1-023: expected status": false,
+					"C1-023: no credential or stack-trace leak": true
+				},
+				{
+					"C1-024: expected status": false,
+					"C1-024: no credential or stack-trace leak": true
+				},
+				{
+					"C1-025: expected status": false,
+					"C1-025: no credential or stack-trace leak": true
+				},
+				{
+					"C1-026: expected status": false,
+					"C1-026: no credential or stack-trace leak": true
+				},
+				{
+					"C1-027: expected status": true,
+					"C1-027: no credential or stack-trace leak": true
+				},
+				{
+					"C1-028: expected status": false,
+					"C1-028: no credential or stack-trace leak": true
+				},
+				{
+					"C1-029: expected status": true,
+					"C1-029: no credential or stack-trace leak": true
+				},
+				{
+					"C1-030: expected status": false,
+					"C1-030: no credential or stack-trace leak": true
+				},
+				{
+					"C1-031: expected status": false,
+					"C1-031: no credential or stack-trace leak": true
+				},
+				{
+					"C1-032: expected status": true,
+					"C1-032: no credential or stack-trace leak": true
+				},
+				{
+					"C1-033: expected status": false,
+					"C1-033: no credential or stack-trace leak": true
+				},
+				{
+					"C1-034: expected status": true,
+					"C1-034: no credential or stack-trace leak": true,
+					"C1-034: created category ID": true
+				},
+				{
+					"C1-035: expected status": true,
+					"C1-035: no credential or stack-trace leak": true
+				},
+				{
+					"C1-036: expected status": false,
+					"C1-036: no credential or stack-trace leak": true
+				},
+				{
+					"C1-037: expected status": false,
+					"C1-037: no credential or stack-trace leak": true
+				},
+				{
+					"C1-038: expected status": true,
+					"C1-038: no credential or stack-trace leak": true
+				},
+				{
+					"C1-039: expected status": false,
+					"C1-039: no credential or stack-trace leak": true,
+					"C1-039: replacement category remains": true
+				},
+				{
+					"C1-040: expected status": true,
+					"C1-040: no credential or stack-trace leak": true,
+					"C1-040: created category ID": true
+				}
+			]
+		}
+	],
+	"count": 40,
+	"totalTime": 99,
+	"collection": {
+		"requests": [
+			{
+				"id": "96f9e27a-90eb-4fef-832b-58f001689117",
+				"method": "GET"
+			}
+		]
+	}
+}
