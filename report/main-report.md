@@ -123,8 +123,8 @@ Only report reproducible, genuine bugs. Attach an issue screenshot for each bug.
 - Fix commit: `7bb12f3` — `fix(ci): checkout SUT submodule`.
 - Historical run: `HW06 API tests #3`, triggered by push of commit `7bb12f3` on `main`, passed in 30 seconds. It used `continue-on-error`, so it proves submodule checkout only and is not claimed as an all-tests-pass baseline.
 - Strict baseline: the workflow now applies the versioned [SUT remediation patch](../ci/sut-fixes.patch), resets SUT state between suites, and removes `continue-on-error`. Local pre-push verification passed FR-02 (80 assertions), FR-08 (113 assertions), and FR-14 (91 assertions), with zero failures.
-- Strict GitHub run URL and screenshot: `<add after the strict workflow run>`.
-- Required intentional-failure run URL and screenshot: `<add after the one-assertion failing commit>`.
+- Strict all-pass run: [GitHub Actions #32505802850](https://github.com/Jiduckiess/HW06/actions/runs/32505802850), commit `1e6e571`, conclusion **success**. Screenshot: `<save green strict-run screenshot under evidence/ci/>`.
+- Required intentional-failure run: [GitHub Actions #32505900553](https://github.com/Jiduckiess/HW06/actions/runs/32505900553), commit `1998d99`, conclusion **failure**. It changed only A1-001's expected status from `200` to `201`; the next commit restores the correct oracle. Screenshot: `<save red intentional-failure screenshot under evidence/ci/>`.
 - Security note: CI uses GitHub Actions Secrets for runtime credentials and does not publish raw Newman reports, because raw reports may contain passwords or JWTs.
 
 ## 9. AI-driven API test generator

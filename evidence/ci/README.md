@@ -10,4 +10,8 @@ The strict CI baseline applies `ci/sut-fixes.patch` to the pinned SUT submodule,
 | FR-08 | 113 | 0 |
 | FR-14 | 91 | 0 |
 
-After the workflow runs on GitHub, save a screenshot of the green strict run here and add its run URL to `report/main-report.md`. A later intentional one-assertion failure will be committed and run separately for the assignment's required red CI sample, then reverted.
+Verified strict all-pass run: [GitHub Actions #32505802850](https://github.com/Jiduckiess/HW06/actions/runs/32505802850) for commit `1e6e571`.
+
+Verified intentional failure: [GitHub Actions #32505900553](https://github.com/Jiduckiess/HW06/actions/runs/32505900553) for commit `1998d99`. Only the A1-001 expected-status oracle was changed from `200` to `201`; the endpoint correctly returned `200`, so the run failed as intended. The following commit restores `200`.
+
+Save a screenshot of both runs in this folder before final submission.
