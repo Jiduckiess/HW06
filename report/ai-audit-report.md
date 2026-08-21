@@ -251,3 +251,13 @@ hãy push tạm lần lượt theo từng pool một lên GitHub và tôi còn m
 **Output and human review**
 
 Initialized the outer repository, configured the supplied GitHub remote, and pushed separate commits for Pool A/FR-02, Pool B/FR-08, and Pool C/FR-14. Added `.github/workflows/api-tests.yml`: it installs the backend/Newman, initializes and starts the SUT, then runs each pool with its data file. Plaintext seed credentials and sensitive local Newman HTML exports were deliberately kept out of Git; CI does not upload raw reports because they can contain passwords/JWTs. The workflow reads `ADMIN_EMAIL`, `ADMIN_PASSWORD`, `TEST_USER_EMAIL`, and `TEST_USER_PASSWORD` from GitHub Secrets. The student must add those Secrets, open the Actions run, and capture a real redacted workflow screenshot for the final report.
+
+## AI-17 — CI submodule checkout correction
+
+**Trigger**
+
+The first manually triggered Actions run failed because the outer repository stores `eshop-sut` as a Git submodule.
+
+**Output and human review**
+
+Updated `actions/checkout` with `submodules: recursive` so the GitHub runner receives `eshop-sut/backend` before dependency installation and SUT startup. The student must rerun the workflow after this commit and confirm that all four Actions Secrets are set.
