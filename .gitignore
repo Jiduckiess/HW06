@@ -1,3 +1,4 @@
 node_modules/
 evidence/newman/*.html
 *.DS_Store
+postman/HW06.local.private.postman_environment.json

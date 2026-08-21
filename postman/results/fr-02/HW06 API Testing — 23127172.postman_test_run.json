@@ -1,0 +1,566 @@
+{
+	"id": "37b9f027-c4dd-4669-a8c8-61fe56f893d3",
+	"name": "HW06 API Testing — 23127172",
+	"timestamp": "2026-08-21T12:58:02.487Z",
+	"collection_id": "57612121-81e1ab7e-746e-4eb4-b349-e2a79ab60fda",
+	"folder_id": "57612121-d2e147cc-6cd8-4571-9abc-82921ce56d8d",
+	"environment_id": "57612121-27bd62e9-77a5-4791-9dba-406de994f4bd",
+	"totalPass": 75,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2026-08-21T12:58:01.183Z",
+	"totalFail": 5,
+	"results": [
+		{
+			"id": "4a82dcfa-6364-40a8-9302-fc986b1bf551",
+			"name": "FR-02 data-driven suite (A1-001 to A1-040)",
+			"url": "http://localhost:3000/api/login",
+			"time": 2,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"A1-040: expected status": true,
+				"A1-040: JWT token and user exist": false
+			},
+			"testPassFailCounts": {
+				"A1-001: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-001: JWT token and user exist": {
+					"pass": 0,
+					"fail": 1
+				},
+				"A1-002: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-002: no token is issued": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-003: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-003: no token is issued": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-004: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-004: no token is issued": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-005: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-005: no token is issued": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-006: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-006: no token is issued": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-007: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-007: no token is issued": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-008: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-008: no token is issued": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-009: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-009: no token is issued": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-010: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-010: no token is issued": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-011: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-011: no token is issued": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-012: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-012: no token is issued": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-013: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-013: no token is issued": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-014: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-014: no token is issued": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-015: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-015: no token is issued": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-016: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-016: no token is issued": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-017: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-017: no token is issued": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-018: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-018: no token is issued": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-019: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-019: no token is issued": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-020: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-020: no token is issued": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-021: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-021: no token is issued": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-022: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-022: no token is issued": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-023: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-023: JWT token and user exist": {
+					"pass": 0,
+					"fail": 1
+				},
+				"A1-024: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-024: no token is issued": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-025: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-025: no token is issued": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-026: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-026: no token is issued": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-027: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-027: no token is issued": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-028: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-028: no token is issued": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-029: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-029: no token is issued": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-030: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-030: no token is issued": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-031: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-031: no token is issued": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-032: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-032: no token is issued": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-033: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-033: no token is issued": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-034: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-034: no token is issued": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-035: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-035: JWT token and user exist": {
+					"pass": 0,
+					"fail": 1
+				},
+				"A1-036: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-036: no token is issued": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-037: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-037: no token is issued": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-038: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-038: JWT token and user exist": {
+					"pass": 0,
+					"fail": 1
+				},
+				"A1-039: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-039: no token is issued": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-040: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"A1-040: JWT token and user exist": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				27,
+				4,
+				2,
+				2,
+				2,
+				2,
+				3,
+				2,
+				3,
+				2,
+				2,
+				2,
+				3,
+				2,
+				2,
+				2,
+				2,
+				2,
+				2,
+				2,
+				2,
+				2,
+				3,
+				2,
+				2,
+				2,
+				2,
+				2,
+				3,
+				2,
+				2,
+				2,
+				2,
+				2,
+				3,
+				5,
+				4,
+				5,
+				2,
+				2
+			],
+			"allTests": [
+				{
+					"A1-001: expected status": true,
+					"A1-001: JWT token and user exist": false
+				},
+				{
+					"A1-002: expected status": true,
+					"A1-002: no token is issued": true
+				},
+				{
+					"A1-003: expected status": true,
+					"A1-003: no token is issued": true
+				},
+				{
+					"A1-004: expected status": true,
+					"A1-004: no token is issued": true
+				},
+				{
+					"A1-005: expected status": true,
+					"A1-005: no token is issued": true
+				},
+				{
+					"A1-006: expected status": true,
+					"A1-006: no token is issued": true
+				},
+				{
+					"A1-007: expected status": true,
+					"A1-007: no token is issued": true
+				},
+				{
+					"A1-008: expected status": true,
+					"A1-008: no token is issued": true
+				},
+				{
+					"A1-009: expected status": true,
+					"A1-009: no token is issued": true
+				},
+				{
+					"A1-010: expected status": true,
+					"A1-010: no token is issued": true
+				},
+				{
+					"A1-011: expected status": true,
+					"A1-011: no token is issued": true
+				},
+				{
+					"A1-012: expected status": true,
+					"A1-012: no token is issued": true
+				},
+				{
+					"A1-013: expected status": true,
+					"A1-013: no token is issued": true
+				},
+				{
+					"A1-014: expected status": true,
+					"A1-014: no token is issued": true
+				},
+				{
+					"A1-015: expected status": true,
+					"A1-015: no token is issued": true
+				},
+				{
+					"A1-016: expected status": true,
+					"A1-016: no token is issued": true
+				},
+				{
+					"A1-017: expected status": true,
+					"A1-017: no token is issued": true
+				},
+				{
+					"A1-018: expected status": true,
+					"A1-018: no token is issued": true
+				},
+				{
+					"A1-019: expected status": true,
+					"A1-019: no token is issued": true
+				},
+				{
+					"A1-020: expected status": true,
+					"A1-020: no token is issued": true
+				},
+				{
+					"A1-021: expected status": true,
+					"A1-021: no token is issued": true
+				},
+				{
+					"A1-022: expected status": true,
+					"A1-022: no token is issued": true
+				},
+				{
+					"A1-023: expected status": true,
+					"A1-023: JWT token and user exist": false
+				},
+				{
+					"A1-024: expected status": true,
+					"A1-024: no token is issued": true
+				},
+				{
+					"A1-025: expected status": true,
+					"A1-025: no token is issued": true
+				},
+				{
+					"A1-026: expected status": true,
+					"A1-026: no token is issued": true
+				},
+				{
+					"A1-027: expected status": true,
+					"A1-027: no token is issued": true
+				},
+				{
+					"A1-028: expected status": true,
+					"A1-028: no token is issued": true
+				},
+				{
+					"A1-029: expected status": true,
+					"A1-029: no token is issued": true
+				},
+				{
+					"A1-030: expected status": true,
+					"A1-030: no token is issued": true
+				},
+				{
+					"A1-031: expected status": true,
+					"A1-031: no token is issued": true
+				},
+				{
+					"A1-032: expected status": true,
+					"A1-032: no token is issued": true
+				},
+				{
+					"A1-033: expected status": true,
+					"A1-033: no token is issued": true
+				},
+				{
+					"A1-034: expected status": true,
+					"A1-034: no token is issued": true
+				},
+				{
+					"A1-035: expected status": true,
+					"A1-035: JWT token and user exist": false
+				},
+				{
+					"A1-036: expected status": true,
+					"A1-036: no token is issued": true
+				},
+				{
+					"A1-037: expected status": true,
+					"A1-037: no token is issued": true
+				},
+				{
+					"A1-038: expected status": true,
+					"A1-038: JWT token and user exist": false
+				},
+				{
+					"A1-039: expected status": true,
+					"A1-039: no token is issued": true
+				},
+				{
+					"A1-040: expected status": true,
+					"A1-040: JWT token and user exist": false
+				}
+			]
+		}
+	],
+	"count": 40,
+	"totalTime": 121,
+	"collection": {
+		"requests": [
+			{
+				"id": "4a82dcfa-6364-40a8-9302-fc986b1bf551",
+				"method": "POST"
+			}
+		]
+	}
+}

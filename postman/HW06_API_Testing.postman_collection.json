@@ -1,0 +1,174 @@
+{
+  "info": {
+    "name": "HW06 API Testing — 23127172",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:3000" },
+    { "key": "studentId", "value": "23127172" }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "const studentId = pm.environment.get('studentId') || pm.collectionVariables.get('studentId');",
+          "pm.request.headers.upsert({ key: 'X-Student-Id', value: studentId });",
+          "console.log('X-Student-Id:', studentId);"
+        ]
+      }
+    }
+  ],
+  "item": [
+    {
+      "name": "FR-02 — Login and account lockout",
+      "item": [
+        {
+          "name": "FR-02 data-driven suite (A1-001 to A1-040)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "{{contentType}}" }
+            ],
+            "body": { "mode": "raw", "raw": "{{rawBody}}", "options": { "raw": { "language": "json" } } },
+            "url": "http://localhost:3000/api/login"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const iterationRow = pm.iterationData;",
+                  "const id = iterationRow.get('id');",
+                  "const allowed = String(iterationRow.get('expectedStatus')).split(',').map(Number);",
+                  "pm.test(`${id}: expected status`, () => pm.expect(pm.response.code).to.be.oneOf(allowed));",
+                  "let body = {}; try { body = pm.response.json(); } catch (e) {}",
+                  "if (String(iterationRow.get('expectToken')) === 'true') {",
+                  "  pm.test(`${id}: JWT token and user exist`, () => { pm.expect(body.token).to.be.a('string').and.not.empty; pm.expect(body.user).to.exist; pm.expect(body.user).not.to.have.property('password'); });",
+                  "} else {",
+                  "  pm.test(`${id}: no token is issued`, () => pm.expect(body.token).to.not.exist);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "FR-08 — Checkout",
+      "description": "Data-driven checkout suite B1-001 to B1-040. It obtains the seeded test-user token automatically. Reset the SUT database before a fresh run because successful requests create orders and this SUT does not clear its cart.",
+      "item": [
+        {
+          "name": "FR-08 data-driven suite (B1-001 to B1-040)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "{{contentType}}" },
+              { "key": "Authorization", "value": "Bearer {{fr08Token}}" }
+            ],
+            "body": { "mode": "raw", "raw": "{{rawBody}}", "options": { "raw": { "language": "json" } } },
+            "url": "http://localhost:3000/api/checkout"
+          },
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const row = pm.iterationData;",
+                  "const mode = row.get('authMode') || 'valid';",
+                  "const baseUrl = pm.environment.get('baseUrl') || pm.collectionVariables.get('baseUrl') || 'http://localhost:3000';",
+                  "const testUserEmail = pm.environment.get('testUserEmail'); const testUserPassword = pm.environment.get('testUserPassword');",
+                  "pm.request.headers.upsert({ key: 'Content-Type', value: row.get('contentType') || 'application/json' });",
+                  "pm.request.body.update(row.get('rawBody'));",
+                  "if (mode === 'none') {",
+                  "  pm.request.headers.remove('Authorization');",
+                  "} else if (mode === 'invalid') {",
+                  "  pm.request.headers.upsert({ key: 'Authorization', value: 'Bearer invalid.token.value' });",
+                  "} else pm.sendRequest({ url: `${baseUrl}/api/login`, method: 'POST', header: { 'Content-Type': 'application/json' }, body: { mode: 'raw', raw: JSON.stringify({ email: testUserEmail, password: testUserPassword }) } }, (err, res) => {",
+                  "  if (err) throw new Error(`FR-08 setup login failed: ${err}`);",
+                  "  const login = res.json();",
+                  "  if (!login.token) throw new Error(`FR-08 setup login did not return a token (HTTP ${res.code})`);",
+                  "  pm.collectionVariables.set('fr08Token', login.token);",
+                  "  pm.request.headers.upsert({ key: 'Authorization', value: `Bearer ${login.token}` });",
+                  "});"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const row = pm.iterationData;",
+                  "const id = row.get('id');",
+                  "const allowed = String(row.get('expectedStatus')).split(',').map(Number);",
+                  "pm.test(`${id}: expected status`, () => pm.expect(pm.response.code).to.be.oneOf(allowed));",
+                  "let body = {}; try { body = pm.response.json(); } catch (e) {}",
+                  "pm.test(`${id}: response does not leak credentials`, () => { pm.expect(body).not.to.have.property('password'); pm.expect(body).not.to.have.property('token'); });",
+                  "if (pm.response.code >= 500) pm.test(`${id}: no server error`, () => pm.expect.fail(`Unexpected HTTP ${pm.response.code}`));",
+                  "if (String(row.get('expectSuccess')) === 'true') {",
+                  "  pm.test(`${id}: checkout success schema`, () => { pm.expect(body.message).to.equal('Checkout successful'); pm.expect(body.orderId).to.be.a('number'); });",
+                  "  const expectedTotal = row.get('expectedStoredTotal');",
+                  "  if (expectedTotal) pm.sendRequest(`${pm.environment.get('baseUrl') || 'http://localhost:3000'}/api/orders/${body.orderId}`, (err, orderResponse) => {",
+                  "    pm.test(`${id}: stored total is server-calculated`, () => { pm.expect(err).to.not.exist; pm.expect(orderResponse.code).to.equal(200); pm.expect(orderResponse.json().total_amount).to.equal(Number(expectedTotal)); });",
+                  "    pm.test(`${id}: initial status is pending`, () => pm.expect(orderResponse.json().status).to.equal('pending'));",
+                  "  });",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "FR-14 — Category management (CRUD)",
+      "description": "Data-driven Category CRUD suite C1-001 to C1-040. It logs in using the seeded admin/user accounts and creates disposable categories where a case needs a target ID.",
+      "item": [
+        {
+          "name": "FR-14 data-driven suite (C1-001 to C1-040)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "{{contentType}}" }, { "key": "Authorization", "value": "Bearer {{fr14Token}}" }],
+            "body": { "mode": "raw", "raw": "{{rawBody}}", "options": { "raw": { "language": "json" } } },
+            "url": "http://localhost:3000/api/categories"
+          },
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": { "type": "text/javascript", "exec": [
+                "const row = pm.iterationData; const baseUrl = pm.environment.get('baseUrl') || 'http://localhost:3000'; const authMode = row.get('authMode') || 'admin'; const setup = row.get('setup') || 'none'; const unique = `HW06-23127172-${row.get('id')}-${Date.now()}`; const adminEmail = pm.environment.get('adminEmail'); const adminPassword = pm.environment.get('adminPassword'); const testUserEmail = pm.environment.get('testUserEmail'); const testUserPassword = pm.environment.get('testUserPassword');",
+                "pm.request.method = row.get('method'); pm.request.url = baseUrl + row.get('path'); pm.request.body.update(row.get('rawBody') || ''); pm.request.headers.upsert({ key: 'Content-Type', value: row.get('contentType') || 'application/json' });",
+                "const login = (email, password, done) => pm.sendRequest({ url: `${baseUrl}/api/login`, method: 'POST', header: { 'Content-Type': 'application/json' }, body: { mode: 'raw', raw: JSON.stringify({ email, password }) } }, (err, res) => { if (err) throw err; const body = res.json(); if (!body.token) throw new Error(`FR-14 setup login failed (HTTP ${res.code})`); done(body.token); });",
+                "const create = (token, suffix, done) => pm.sendRequest({ url: `${baseUrl}/api/categories`, method: 'POST', header: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` }, body: { mode: 'raw', raw: JSON.stringify({ name: `${unique}-${suffix}` }) } }, (err, res) => { if (err) throw err; const body = res.json(); if (!body.id) throw new Error(`FR-14 setup create failed (HTTP ${res.code})`); done(body.id); });",
+                "const applyAuth = token => pm.request.headers.upsert({ key: 'Authorization', value: `Bearer ${token}` });",
+                "const prepareTarget = (adminToken, done) => { if (setup === 'none') return done(); if (setup === 'target') return create(adminToken, 'target', id => { pm.collectionVariables.set('fr14TargetId', id); done(); }); if (setup === 'two-targets') return create(adminToken, 'A', first => create(adminToken, 'B', second => { pm.collectionVariables.set('fr14TargetId', first); pm.collectionVariables.set('fr14SecondId', second); done(); })); if (setup === 'stale-target') return create(adminToken, 'A', first => pm.sendRequest({ url: `${baseUrl}/api/categories/${first}`, method: 'DELETE', header: { Authorization: `Bearer ${adminToken}` } }, () => create(adminToken, 'B', second => { pm.collectionVariables.set('fr14TargetId', first); pm.collectionVariables.set('fr14SecondId', second); done(); }))); if (setup === 'referenced-target') return create(adminToken, 'referenced', id => pm.sendRequest({ url: `${baseUrl}/api/products`, method: 'POST', header: { 'Content-Type': 'application/json' }, body: { mode: 'raw', raw: JSON.stringify({ name: `${unique}-product`, price: 1, description: 'FR-14 referential test', imageUrl: '', category_id: id }) } }, () => { pm.collectionVariables.set('fr14TargetId', id); done(); })); done(); };",
+                "if (authMode === 'none') { if (setup === 'target') login(adminEmail, adminPassword, token => prepareTarget(token, () => pm.request.headers.remove('Authorization'))); else pm.request.headers.remove('Authorization'); } else if (authMode === 'invalid') { pm.request.headers.upsert({ key: 'Authorization', value: 'Bearer invalid.token.value' }); } else if (authMode === 'user') { if (setup === 'target') login(adminEmail, adminPassword, adminToken => prepareTarget(adminToken, () => login(testUserEmail, testUserPassword, applyAuth))); else login(testUserEmail, testUserPassword, applyAuth); } else { login(adminEmail, adminPassword, token => { pm.collectionVariables.set('fr14Token', token); applyAuth(token); prepareTarget(token, () => {}); }); }"
+              ] }
+            },
+            {
+              "listen": "test",
+              "script": { "type": "text/javascript", "exec": [
+                "const row = pm.iterationData; const id = row.get('id'); const baseUrl = pm.environment.get('baseUrl') || 'http://localhost:3000'; const allowed = String(row.get('expectedStatus')).split(',').map(Number);",
+                "pm.test(`${id}: expected status`, () => pm.expect(pm.response.code).to.be.oneOf(allowed));",
+                "let body = {}; try { body = pm.response.json(); } catch (e) {}",
+                "pm.test(`${id}: no credential or stack-trace leak`, () => { const text = pm.response.text(); pm.expect(body).not.to.have.property('password'); pm.expect(body).not.to.have.property('token'); pm.expect(text).not.to.match(/at .*\\.js:\\d+/); });",
+                "if (pm.response.code >= 500) pm.test(`${id}: no server error`, () => pm.expect.fail(`Unexpected HTTP ${pm.response.code}`));",
+                "if (String(row.get('expectId')) === 'true') pm.test(`${id}: created category ID`, () => pm.expect(body.id).to.be.a('number').and.above(0));",
+                "if (row.get('method') === 'GET' && pm.response.code === 200) pm.test(`${id}: list schema`, () => { pm.expect(body).to.be.an('array'); body.forEach(category => { pm.expect(category.id).to.be.a('number'); pm.expect(category.name).to.be.a('string'); }); });",
+                "if (id === 'C1-039' && pm.collectionVariables.get('fr14SecondId')) pm.sendRequest(`${baseUrl}/api/categories`, (err, res) => pm.test('C1-039: replacement category remains', () => { pm.expect(err).to.not.exist; pm.expect(res.json().some(c => c.id === Number(pm.collectionVariables.get('fr14SecondId')))).to.equal(true); }));"
+              ] }
+            }
+          ],
+          "response": []
+        }
+      ]
+    }
+  ]
+}

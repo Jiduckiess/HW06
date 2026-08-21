@@ -1,0 +1,460 @@
+
+HW06 API Testing — 23127172
+
+Iteration 1/40
+
+❏ API 1 — FR-02 Login and account lockout
+↳ FR-02 data-driven suite (A1-001 to A1-040)
+  ┌
+  │ 'X-Student-Id:', '23127172'
+  └
+  POST http://localhost:3000/api/login [200 OK, 635B, 22ms]
+  ✓  A1-001: expected status
+  1. A1-001: JWT token and user exist
+
+Iteration 2/40
+
+↳ FR-02 data-driven suite (A1-001 to A1-040)
+  ┌
+  │ 'X-Student-Id:', '23127172'
+  └
+  POST http://localhost:3000/api/login [401 Unauthorized, 314B, 2ms]
+  ✓  A1-002: expected status
+  ✓  A1-002: no token is issued
+
+Iteration 3/40
+
+↳ FR-02 data-driven suite (A1-001 to A1-040)
+  ┌
+  │ 'X-Student-Id:', '23127172'
+  └
+  POST http://localhost:3000/api/login [401 Unauthorized, 314B, 1ms]
+  ✓  A1-003: expected status
+  ✓  A1-003: no token is issued
+
+Iteration 4/40
+
+↳ FR-02 data-driven suite (A1-001 to A1-040)
+  ┌
+  │ 'X-Student-Id:', '23127172'
+  └
+  POST http://localhost:3000/api/login [401 Unauthorized, 314B, 1ms]
+  ✓  A1-004: expected status
+  ✓  A1-004: no token is issued
+
+Iteration 5/40
+
+↳ FR-02 data-driven suite (A1-001 to A1-040)
+  ┌
+  │ 'X-Student-Id:', '23127172'
+  └
+  POST http://localhost:3000/api/login [401 Unauthorized, 314B, 1ms]
+  ✓  A1-005: expected status
+  ✓  A1-005: no token is issued
+
+Iteration 6/40
+
+↳ FR-02 data-driven suite (A1-001 to A1-040)
+  ┌
+  │ 'X-Student-Id:', '23127172'
+  └
+  POST http://localhost:3000/api/login [401 Unauthorized, 314B, 1ms]
+  ✓  A1-006: expected status
+  ✓  A1-006: no token is issued
+
+Iteration 7/40
+
+↳ FR-02 data-driven suite (A1-001 to A1-040)
+  ┌
+  │ 'X-Student-Id:', '23127172'
+  └
+  POST http://localhost:3000/api/login [401 Unauthorized, 314B, 1ms]
+  ✓  A1-007: expected status
+  ✓  A1-007: no token is issued
+
+Iteration 8/40
+
+↳ FR-02 data-driven suite (A1-001 to A1-040)
+  ┌
+  │ 'X-Student-Id:', '23127172'
+  └
+  POST http://localhost:3000/api/login [401 Unauthorized, 314B, 1ms]
+  ✓  A1-008: expected status
+  ✓  A1-008: no token is issued
+
+Iteration 9/40
+
+↳ FR-02 data-driven suite (A1-001 to A1-040)
+  ┌
+  │ 'X-Student-Id:', '23127172'
+  └
+  POST http://localhost:3000/api/login [401 Unauthorized, 314B, 3ms]
+  ✓  A1-009: expected status
+  ✓  A1-009: no token is issued
+
+Iteration 10/40
+
+↳ FR-02 data-driven suite (A1-001 to A1-040)
+  ┌
+  │ 'X-Student-Id:', '23127172'
+  └
+  POST http://localhost:3000/api/login [401 Unauthorized, 314B, 1ms]
+  ✓  A1-010: expected status
+  ✓  A1-010: no token is issued
+
+Iteration 11/40
+
+↳ FR-02 data-driven suite (A1-001 to A1-040)
+  ┌
+  │ 'X-Student-Id:', '23127172'
+  └
+  POST http://localhost:3000/api/login [401 Unauthorized, 314B, 1ms]
+  ✓  A1-011: expected status
+  ✓  A1-011: no token is issued
+
+Iteration 12/40
+
+↳ FR-02 data-driven suite (A1-001 to A1-040)
+  ┌
+  │ 'X-Student-Id:', '23127172'
+  └
+  POST http://localhost:3000/api/login [401 Unauthorized, 314B, 1ms]
+  ✓  A1-012: expected status
+  ✓  A1-012: no token is issued
+
+Iteration 13/40
+
+↳ FR-02 data-driven suite (A1-001 to A1-040)
+  ┌
+  │ 'X-Student-Id:', '23127172'
+  └
+  POST http://localhost:3000/api/login [401 Unauthorized, 314B, 2ms]
+  ✓  A1-013: expected status
+  ✓  A1-013: no token is issued
+
+Iteration 14/40
+
+↳ FR-02 data-driven suite (A1-001 to A1-040)
+  ┌
+  │ 'X-Student-Id:', '23127172'
+  └
+  POST http://localhost:3000/api/login [401 Unauthorized, 314B, 1ms]
+  ✓  A1-014: expected status
+  ✓  A1-014: no token is issued
+
+Iteration 15/40
+
+↳ FR-02 data-driven suite (A1-001 to A1-040)
+  ┌
+  │ 'X-Student-Id:', '23127172'
+  └
+  POST http://localhost:3000/api/login [401 Unauthorized, 314B, 1ms]
+  ✓  A1-015: expected status
+  ✓  A1-015: no token is issued
+
+Iteration 16/40
+
+↳ FR-02 data-driven suite (A1-001 to A1-040)
+  ┌
+  │ 'X-Student-Id:', '23127172'
+  └
+  POST http://localhost:3000/api/login [401 Unauthorized, 314B, 1ms]
+  ✓  A1-016: expected status
+  ✓  A1-016: no token is issued
+
+Iteration 17/40
+
+↳ FR-02 data-driven suite (A1-001 to A1-040)
+  ┌
+  │ 'X-Student-Id:', '23127172'
+  └
+  POST http://localhost:3000/api/login [401 Unauthorized, 314B, 1ms]
+  ✓  A1-017: expected status
+  ✓  A1-017: no token is issued
+
+Iteration 18/40
+
+↳ FR-02 data-driven suite (A1-001 to A1-040)
+  ┌
+  │ 'X-Student-Id:', '23127172'
+  └
+  POST http://localhost:3000/api/login [401 Unauthorized, 314B, 1ms]
+  ✓  A1-018: expected status
+  ✓  A1-018: no token is issued
+
+Iteration 19/40
+
+↳ FR-02 data-driven suite (A1-001 to A1-040)
+  ┌
+  │ 'X-Student-Id:', '23127172'
+  └
+  POST http://localhost:3000/api/login [401 Unauthorized, 314B, 1ms]
+  ✓  A1-019: expected status
+  ✓  A1-019: no token is issued
+
+Iteration 20/40
+
+↳ FR-02 data-driven suite (A1-001 to A1-040)
+  ┌
+  │ 'X-Student-Id:', '23127172'
+  └
+  POST http://localhost:3000/api/login [401 Unauthorized, 314B, 1ms]
+  ✓  A1-020: expected status
+  ✓  A1-020: no token is issued
+
+Iteration 21/40
+
+↳ FR-02 data-driven suite (A1-001 to A1-040)
+  ┌
+  │ 'X-Student-Id:', '23127172'
+  └
+  POST http://localhost:3000/api/login [401 Unauthorized, 314B, 1ms]
+  ✓  A1-021: expected status
+  ✓  A1-021: no token is issued
+
+Iteration 22/40
+
+↳ FR-02 data-driven suite (A1-001 to A1-040)
+  ┌
+  │ 'X-Student-Id:', '23127172'
+  └
+  POST http://localhost:3000/api/login [401 Unauthorized, 314B, 1ms]
+  ✓  A1-022: expected status
+  ✓  A1-022: no token is issued
+
+Iteration 23/40
+
+↳ FR-02 data-driven suite (A1-001 to A1-040)
+  ┌
+  │ 'X-Student-Id:', '23127172'
+  └
+  POST http://localhost:3000/api/login [200 OK, 635B, 1ms]
+  ✓  A1-023: expected status
+  2. A1-023: JWT token and user exist
+
+Iteration 24/40
+
+↳ FR-02 data-driven suite (A1-001 to A1-040)
+  ┌
+  │ 'X-Student-Id:', '23127172'
+  └
+  POST http://localhost:3000/api/login [401 Unauthorized, 314B, 1ms]
+  ✓  A1-024: expected status
+  ✓  A1-024: no token is issued
+
+Iteration 25/40
+
+↳ FR-02 data-driven suite (A1-001 to A1-040)
+  ┌
+  │ 'X-Student-Id:', '23127172'
+  └
+  POST http://localhost:3000/api/login [401 Unauthorized, 314B, 1ms]
+  ✓  A1-025: expected status
+  ✓  A1-025: no token is issued
+
+Iteration 26/40
+
+↳ FR-02 data-driven suite (A1-001 to A1-040)
+  ┌
+  │ 'X-Student-Id:', '23127172'
+  └
+  POST http://localhost:3000/api/login [401 Unauthorized, 314B, 1ms]
+  ✓  A1-026: expected status
+  ✓  A1-026: no token is issued
+
+Iteration 27/40
+
+↳ FR-02 data-driven suite (A1-001 to A1-040)
+  ┌
+  │ 'X-Student-Id:', '23127172'
+  └
+  POST http://localhost:3000/api/login [401 Unauthorized, 314B, 2ms]
+  ✓  A1-027: expected status
+  ✓  A1-027: no token is issued
+
+Iteration 28/40
+
+↳ FR-02 data-driven suite (A1-001 to A1-040)
+  ┌
+  │ 'X-Student-Id:', '23127172'
+  └
+  POST http://localhost:3000/api/login [401 Unauthorized, 314B, 1ms]
+  ✓  A1-028: expected status
+  ✓  A1-028: no token is issued
+
+Iteration 29/40
+
+↳ FR-02 data-driven suite (A1-001 to A1-040)
+  ┌
+  │ 'X-Student-Id:', '23127172'
+  └
+  POST http://localhost:3000/api/login [401 Unauthorized, 314B, 1ms]
+  ✓  A1-029: expected status
+  ✓  A1-029: no token is issued
+
+Iteration 30/40
+
+↳ FR-02 data-driven suite (A1-001 to A1-040)
+  ┌
+  │ 'X-Student-Id:', '23127172'
+  └
+  POST http://localhost:3000/api/login [401 Unauthorized, 314B, 1ms]
+  ✓  A1-030: expected status
+  ✓  A1-030: no token is issued
+
+Iteration 31/40
+
+↳ FR-02 data-driven suite (A1-001 to A1-040)
+  ┌
+  │ 'X-Student-Id:', '23127172'
+  └
+  POST http://localhost:3000/api/login [401 Unauthorized, 314B, 1ms]
+  ✓  A1-031: expected status
+  ✓  A1-031: no token is issued
+
+Iteration 32/40
+
+↳ FR-02 data-driven suite (A1-001 to A1-040)
+  ┌
+  │ 'X-Student-Id:', '23127172'
+  └
+  POST http://localhost:3000/api/login [401 Unauthorized, 314B, 1ms]
+  ✓  A1-032: expected status
+  ✓  A1-032: no token is issued
+
+Iteration 33/40
+
+↳ FR-02 data-driven suite (A1-001 to A1-040)
+  ┌
+  │ 'X-Student-Id:', '23127172'
+  └
+  POST http://localhost:3000/api/login [403 Forbidden, 342B, 1ms]
+  ✓  A1-033: expected status
+  ✓  A1-033: no token is issued
+
+Iteration 34/40
+
+↳ FR-02 data-driven suite (A1-001 to A1-040)
+  ┌
+  │ 'X-Student-Id:', '23127172'
+  └
+  POST http://localhost:3000/api/login [403 Forbidden, 342B, 1ms]
+  ✓  A1-034: expected status
+  ✓  A1-034: no token is issued
+
+Iteration 35/40
+
+↳ FR-02 data-driven suite (A1-001 to A1-040)
+  ┌
+  │ 'X-Student-Id:', '23127172'
+  └
+  POST http://localhost:3000/api/login [200 OK, 635B, 1ms]
+  ✓  A1-035: expected status
+  3. A1-035: JWT token and user exist
+
+Iteration 36/40
+
+↳ FR-02 data-driven suite (A1-001 to A1-040)
+  ┌
+  │ 'X-Student-Id:', '23127172'
+  └
+  POST http://localhost:3000/api/login [400 Bad Request, 1.5kB, 3ms]
+  ✓  A1-036: expected status
+  ✓  A1-036: no token is issued
+
+Iteration 37/40
+
+↳ FR-02 data-driven suite (A1-001 to A1-040)
+  ┌
+  │ 'X-Student-Id:', '23127172'
+  └
+  POST http://localhost:3000/api/login [403 Forbidden, 342B, 1ms]
+  ✓  A1-037: expected status
+  ✓  A1-037: no token is issued
+
+Iteration 38/40
+
+↳ FR-02 data-driven suite (A1-001 to A1-040)
+  ┌
+  │ 'X-Student-Id:', '23127172'
+  └
+  POST http://localhost:3000/api/login [200 OK, 635B, 1ms]
+  ✓  A1-038: expected status
+  4. A1-038: JWT token and user exist
+
+Iteration 39/40
+
+↳ FR-02 data-driven suite (A1-001 to A1-040)
+  ┌
+  │ 'X-Student-Id:', '23127172'
+  └
+  POST http://localhost:3000/api/login [403 Forbidden, 342B, 1ms]
+  ✓  A1-039: expected status
+  ✓  A1-039: no token is issued
+
+Iteration 40/40
+
+↳ FR-02 data-driven suite (A1-001 to A1-040)
+  ┌
+  │ 'X-Student-Id:', '23127172'
+  └
+  POST http://localhost:3000/api/login [200 OK, 635B, 2ms]
+  ✓  A1-040: expected status
+  5. A1-040: JWT token and user exist
+
+┌─────────────────────────┬─────────────────┬─────────────────┐
+│                         │        executed │          failed │
+├─────────────────────────┼─────────────────┼─────────────────┤
+│              iterations │              40 │               0 │
+├─────────────────────────┼─────────────────┼─────────────────┤
+│                requests │              40 │               0 │
+├─────────────────────────┼─────────────────┼─────────────────┤
+│            test-scripts │              40 │               0 │
+├─────────────────────────┼─────────────────┼─────────────────┤
+│      prerequest-scripts │              40 │               0 │
+├─────────────────────────┼─────────────────┼─────────────────┤
+│              assertions │              80 │               5 │
+├─────────────────────────┴─────────────────┴─────────────────┤
+│ total run duration: 509ms                                   │
+├─────────────────────────────────────────────────────────────┤
+│ total data received: 4.41kB (approx)                        │
+├─────────────────────────────────────────────────────────────┤
+│ average response time: 1ms [min: 1ms, max: 22ms, s.d.: 3ms] │
+└─────────────────────────────────────────────────────────────┘
+
+  #  failure             detail                                                                    
+                                                                                                   
+ 1.  AssertionError      A1-001: JWT token and user exist                                          
+     iteration: 1        expected { id: 2, name: 'Test User', …(8) } to not have property          
+                         'password'                                                                
+                         at assertion:1 in test-script                                             
+                         inside "API 1 — FR-02 Login and account lockout / FR-02 data-driven suite 
+                         (A1-001 to A1-040)"                                                       
+                                                                                                   
+ 2.  AssertionError      A1-023: JWT token and user exist                                          
+     iteration: 23       expected { id: 2, name: 'Test User', …(8) } to not have property          
+                         'password'                                                                
+                         at assertion:1 in test-script                                             
+                         inside "API 1 — FR-02 Login and account lockout / FR-02 data-driven suite 
+                         (A1-001 to A1-040)"                                                       
+                                                                                                   
+ 3.  AssertionError      A1-035: JWT token and user exist                                          
+     iteration: 35       expected { id: 2, name: 'Test User', …(8) } to not have property          
+                         'password'                                                                
+                         at assertion:1 in test-script                                             
+                         inside "API 1 — FR-02 Login and account lockout / FR-02 data-driven suite 
+                         (A1-001 to A1-040)"                                                       
+                                                                                                   
+ 4.  AssertionError      A1-038: JWT token and user exist                                          
+     iteration: 38       expected { id: 2, name: 'Test User', …(8) } to not have property          
+                         'password'                                                                
+                         at assertion:1 in test-script                                             
+                         inside "API 1 — FR-02 Login and account lockout / FR-02 data-driven suite 
+                         (A1-001 to A1-040)"                                                       
+                                                                                                   
+ 5.  AssertionError      A1-040: JWT token and user exist                                          
+     iteration: 40       expected { id: 2, name: 'Test User', …(8) } to not have property          
+                         'password'                                                                
+                         at assertion:1 in test-script                                             
+                         inside "API 1 — FR-02 Login and account lockout / FR-02 data-driven suite 
+                         (A1-001 to A1-040)"                                                       
