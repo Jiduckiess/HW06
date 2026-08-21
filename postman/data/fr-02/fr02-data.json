@@ -1,5 +1,5 @@
 [
-  {"id":"A1-001","contentType":"application/json","rawBody":"{\"email\":\"{{testUserEmail}}\",\"password\":\"{{testUserPassword}}\"}","expectedStatus":"200","expectToken":"true"},
+  {"id":"A1-001","contentType":"application/json","rawBody":"{\"email\":\"{{testUserEmail}}\",\"password\":\"{{testUserPassword}}\"}","expectedStatus":"201","expectToken":"true"},
   {"id":"A1-002","contentType":"application/json","rawBody":"{\"email\":\"TEST@ESHOP.COM\",\"password\":\"{{testUserPassword}}\"}","expectedStatus":"401","expectToken":"false"},
   {"id":"A1-003","contentType":"application/json","rawBody":"{\"email\":\" {{testUserEmail}} \",\"password\":\"{{testUserPassword}}\"}","expectedStatus":"401","expectToken":"false"},
   {"id":"A1-004","contentType":"application/json","rawBody":"{\"email\":\"unknown@example.com\",\"password\":\" {{testUserPassword}} \"}","expectedStatus":"401","expectToken":"false"},
