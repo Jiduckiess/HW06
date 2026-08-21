@@ -1,0 +1,80 @@
+name: HW06 API tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  newman:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install backend and Newman dependencies
+        run: |
+          npm ci --prefix eshop-sut/backend
+          npm install -g newman newman-reporter-htmlextra
+
+      - name: Initialize database and start SUT
+        run: |
+          node eshop-sut/backend/database.js
+          node eshop-sut/backend/server.js > sut.log 2>&1 &
+          for attempt in {1..20}; do
+            curl --fail --silent http://localhost:3000/api/categories && exit 0
+            sleep 1
+          done
+          cat sut.log
+          exit 1
+
+      # The SUT currently has documented bugs (BUG-01 to BUG-07). Each run is allowed
+      # to complete so all suites are exercised. No raw Newman HTML/JSON is uploaded:
+      # those formats can contain credentials or JWTs. Capture only redacted screenshots.
+      - name: Run FR-02 with Newman
+        continue-on-error: true
+        run: >-
+          newman run postman/HW06_API_Testing.postman_collection.json
+          -e postman/HW06.local.postman_environment.json
+          -d postman/data/fr-02/fr02-data.json
+          --env-var "adminEmail=${{ secrets.ADMIN_EMAIL }}"
+          --env-var "adminPassword=${{ secrets.ADMIN_PASSWORD }}"
+          --env-var "testUserEmail=${{ secrets.TEST_USER_EMAIL }}"
+          --env-var "testUserPassword=${{ secrets.TEST_USER_PASSWORD }}"
+          --folder "FR-02 — Login and account lockout"
+          -r cli
+
+      - name: Run FR-08 with Newman
+        continue-on-error: true
+        run: >-
+          newman run postman/HW06_API_Testing.postman_collection.json
+          -e postman/HW06.local.postman_environment.json
+          -d postman/data/fr-08/fr08-data.json
+          --env-var "testUserEmail=${{ secrets.TEST_USER_EMAIL }}"
+          --env-var "testUserPassword=${{ secrets.TEST_USER_PASSWORD }}"
+          --folder "FR-08 — Checkout"
+          -r cli
+
+      - name: Run FR-14 with Newman
+        continue-on-error: true
+        run: >-
+          newman run postman/HW06_API_Testing.postman_collection.json
+          -e postman/HW06.local.postman_environment.json
+          -d postman/data/fr-14/fr14-data.json
+          --env-var "adminEmail=${{ secrets.ADMIN_EMAIL }}"
+          --env-var "adminPassword=${{ secrets.ADMIN_PASSWORD }}"
+          --env-var "testUserEmail=${{ secrets.TEST_USER_EMAIL }}"
+          --env-var "testUserPassword=${{ secrets.TEST_USER_PASSWORD }}"
+          --folder "FR-14 — Category management (CRUD)"
+          -r cli
+
+      - name: Write test-run note
+        if: always()
+        run: |
+          echo "## HW06 API test run" >> "$GITHUB_STEP_SUMMARY"
+          echo "FR-02, FR-08, and FR-14 were run with their data files." >> "$GITHUB_STEP_SUMMARY"
+          echo "Known SUT defects are expected in the CLI output; do not publish raw reports containing credentials or JWTs." >> "$GITHUB_STEP_SUMMARY"
