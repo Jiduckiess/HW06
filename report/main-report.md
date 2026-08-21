@@ -121,8 +121,10 @@ Only report reproducible, genuine bugs. Attach an issue screenshot for each bug.
 - Workflow: [.github/workflows/api-tests.yml](../.github/workflows/api-tests.yml)
 - Initial failing run: `fa69add` / `HW06 API tests #1` and manual run `#2` failed because the workflow did not check out the `eshop-sut` submodule.
 - Fix commit: `7bb12f3` — `fix(ci): checkout SUT submodule`.
-- Passing run: `HW06 API tests #3`, triggered by push of commit `7bb12f3` on `main`; **passed** in **30 seconds**.
-- Screenshot evidence: `<save the supplied green Actions screenshot as evidence/ci/ci-pass-7bb12f3.png>`.
+- Historical run: `HW06 API tests #3`, triggered by push of commit `7bb12f3` on `main`, passed in 30 seconds. It used `continue-on-error`, so it proves submodule checkout only and is not claimed as an all-tests-pass baseline.
+- Strict baseline: the workflow now applies the versioned [SUT remediation patch](../ci/sut-fixes.patch), resets SUT state between suites, and removes `continue-on-error`. Local pre-push verification passed FR-02 (80 assertions), FR-08 (113 assertions), and FR-14 (91 assertions), with zero failures.
+- Strict GitHub run URL and screenshot: `<add after the strict workflow run>`.
+- Required intentional-failure run URL and screenshot: `<add after the one-assertion failing commit>`.
 - Security note: CI uses GitHub Actions Secrets for runtime credentials and does not publish raw Newman reports, because raw reports may contain passwords or JWTs.
 
 ## 9. AI-driven API test generator

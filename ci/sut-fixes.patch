@@ -1,0 +1,161 @@
+diff --git a/backend/server.js b/backend/server.js
+index 34f55a2..f5a8072 100644
+--- a/backend/server.js
++++ b/backend/server.js
+@@ -12,4 +12,11 @@ const SECRET_KEY = "super_secret_key_that_should_not_be_here";
+ app.use(cors());
+ app.use(bodyParser.json());
+ 
++app.use((err, req, res, next) => {
++  if (err instanceof SyntaxError && "body" in err) {
++    return res.status(400).json({ error: "Invalid JSON body" });
++  }
++  next(err);
++});
++
+ const userCarts = {};
+@@ -49,7 +56,8 @@ app.post("/api/login", (req, res) => {
+         [user.id],
+       );
+       const token = jwt.sign({ id: user.id, role: user.role }, SECRET_KEY);
+-      res.json({ message: "Login successful", token, user });
++      const safeUser = { id: user.id, name: user.name, email: user.email, role: user.role };
++      res.json({ message: "Login successful", token, user: safeUser });
+     } else {
+       const newAttempts = user.login_attempts + 2;
+       let lockedUntil = null;
+@@ -109,6 +117,15 @@ const authenticateToken = (req, res, next) => {
+   });
+ };
+ 
++const requireAdmin = (req, res, next) => {
++  if (req.user.role !== "admin") return res.status(403).json({ error: "Forbidden" });
++  next();
++};
++
++const validCategoryName = (name) => typeof name === "string" && name.trim().length > 0;
++
++const validCategoryId = (id) => Number.isInteger(Number(id)) && Number(id) > 0 && String(Number(id)) === String(id);
++
+ app.get("/api/users/me", authenticateToken, (req, res) => {
+   db.get("SELECT * FROM users WHERE id = ?", [req.user.id], (err, user) => {
+     res.json(user);
+@@ -246,35 +263,41 @@ app.get("/api/categories", (req, res) => {
+   });
+ });
+ 
+-app.post("/api/categories", authenticateToken, (req, res) => {
+-  const { name } = req.body;
++app.post("/api/categories", authenticateToken, requireAdmin, (req, res) => {
++  const { name } = req.body || {};
++  if (!validCategoryName(name)) return res.status(400).json({ error: "Category name is required" });
+   db.run("INSERT INTO categories (name) VALUES (?)", [name], function (err) {
+     if (err) return res.status(500).json({ error: err.message });
+     res.json({ message: "Category created", id: this.lastID });
+   });
+ });
+ 
+-app.put("/api/categories/:id", authenticateToken, (req, res) => {
+-  const { name } = req.body;
++app.put("/api/categories/:id", authenticateToken, requireAdmin, (req, res) => {
++  const { name } = req.body || {};
++  if (!validCategoryId(req.params.id)) return res.status(400).json({ error: "Invalid category ID" });
++  if (!validCategoryName(name)) return res.status(400).json({ error: "Category name is required" });
+   db.run(
+     "UPDATE categories SET name = ? WHERE id = ?",
+     [name, req.params.id],
+     function (err) {
+-      if (err) return res.status(500).json({ error: err.message });
++      if (err) return res.status(500).json({ error: "Unable to update category" });
++      if (this.changes === 0) return res.status(404).json({ error: "Category not found" });
+       res.json({ message: "Category updated" });
+     },
+   );
+ });
+ 
+-app.delete("/api/categories/:id", authenticateToken, (req, res) => {
+-  db.run(
+-    "DELETE FROM categories WHERE id = ?",
+-    [req.params.id],
+-    function (err) {
+-      if (err) return res.status(500).json({ error: err.message });
++app.delete("/api/categories/:id", authenticateToken, requireAdmin, (req, res) => {
++  if (!validCategoryId(req.params.id)) return res.status(400).json({ error: "Invalid category ID" });
++  db.get("SELECT id FROM products WHERE category_id = ? LIMIT 1", [req.params.id], (productErr, product) => {
++    if (productErr) return res.status(500).json({ error: "Unable to validate category" });
++    if (product) return res.status(409).json({ error: "Category is in use" });
++    db.run("DELETE FROM categories WHERE id = ?", [req.params.id], function (err) {
++      if (err) return res.status(500).json({ error: "Unable to delete category" });
++      if (this.changes === 0) return res.status(404).json({ error: "Category not found" });
+       res.json({ message: "Category deleted" });
+-    },
+-  );
++    });
++  });
+ });
+ 
+ // ==========================================
+@@ -290,22 +313,49 @@ app.get("/api/cart", authenticateToken, (req, res) => {
+ app.post("/api/cart", authenticateToken, (req, res) => {
+   const userId = req.user.id;
+   if (!userCarts[userId]) userCarts[userId] = [];
+-  userCarts[userId].push(req.body);
++  userCarts[userId].push(req.body || {});
+   res.json({ message: "Added to cart" });
+ });
+ 
++app.delete("/api/cart", authenticateToken, (req, res) => {
++  userCarts[req.user.id] = [];
++  res.json({ message: "Cart cleared" });
++});
++
+ app.post("/api/checkout", authenticateToken, (req, res) => {
+   const userId = req.user.id;
+-  const { total_amount, shipping_address } = req.body;
++  const { shipping_address } = req.body || {};
++  if (typeof shipping_address !== "string" || shipping_address.trim().length === 0) {
++    return res.status(400).json({ error: "Shipping address is required" });
++  }
+ 
+-  db.run(
+-    "INSERT INTO orders (user_id, total_amount, status, shipping_address) VALUES (?, ?, ?, ?)",
+-    [userId, total_amount, "pending", shipping_address],
+-    function (err) {
+-      if (err) return res.status(500).json({ error: err.message });
+-      res.json({ message: "Checkout successful", orderId: this.lastID });
+-    },
+-  );
++  const cart = userCarts[userId] || [];
++  if (cart.length === 0) return res.status(400).json({ error: "Cart is empty" });
++  const items = cart.map((item) => ({
++    productId: Number(item.product_id ?? item.id),
++    quantity: Number(item.quantity),
++  }));
++  if (items.some((item) => !Number.isInteger(item.productId) || item.productId <= 0 || !Number.isInteger(item.quantity) || item.quantity <= 0)) {
++    return res.status(400).json({ error: "Cart contains invalid items" });
++  }
++
++  const ids = [...new Set(items.map((item) => item.productId))];
++  const placeholders = ids.map(() => "?").join(",");
++  db.all(`SELECT id, price FROM products WHERE id IN (${placeholders})`, ids, (productErr, products) => {
++    if (productErr) return res.status(500).json({ error: "Unable to validate cart" });
++    if (products.length !== ids.length) return res.status(400).json({ error: "Cart contains an unknown product" });
++    const prices = new Map(products.map((product) => [product.id, product.price]));
++    const calculatedTotal = items.reduce((sum, item) => sum + prices.get(item.productId) * item.quantity, 0);
++    db.run(
++      "INSERT INTO orders (user_id, total_amount, status, shipping_address) VALUES (?, ?, ?, ?)",
++      [userId, calculatedTotal, "pending", shipping_address.trim()],
++      function (err) {
++        if (err) return res.status(500).json({ error: "Unable to create order" });
++        userCarts[userId] = [];
++        res.json({ message: "Checkout successful", orderId: this.lastID });
++      },
++    );
++  });
+ });
+ 
+ app.get("/api/orders/my-orders", authenticateToken, (req, res) => {
+ const userCarts = {};
+ 
++// ==========================================
++// AUTHENTICATION APIS
