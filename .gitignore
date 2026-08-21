@@ -1,0 +1,3 @@
+node_modules/
+evidence/newman/*.html
+*.DS_Store
