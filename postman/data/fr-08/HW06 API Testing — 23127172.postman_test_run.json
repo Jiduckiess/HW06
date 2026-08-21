@@ -1,0 +1,736 @@
+{
+	"id": "43e52668-60a3-44c9-b1ba-8bfe67fda7c2",
+	"name": "HW06 API Testing — 23127172",
+	"timestamp": "2026-08-21T14:21:57.467Z",
+	"collection_id": "57612121-81e1ab7e-746e-4eb4-b349-e2a79ab60fda",
+	"folder_id": "57612121-e901cdf9-bca2-4cae-9180-728bb85272d5",
+	"environment_id": "57612121-27bd62e9-77a5-4791-9dba-406de994f4bd",
+	"totalPass": 103,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2026-08-21T14:21:56.391Z",
+	"totalFail": 11,
+	"results": [
+		{
+			"id": "89ac8c42-06ad-44a6-b7c2-a19ffd00b3e9",
+			"name": "FR-08 data-driven suite (B1-001 to B1-040)",
+			"url": "http://localhost:3000/api/checkout",
+			"time": 3,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"B1-040: expected status": true,
+				"B1-040: response does not leak credentials": true
+			},
+			"testPassFailCounts": {
+				"B1-001: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-001: response does not leak credentials": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-001: checkout success schema": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-001: stored total is server-calculated": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-001: initial status is pending": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-002: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-002: response does not leak credentials": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-003: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-003: response does not leak credentials": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-004: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-004: response does not leak credentials": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-005: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-005: response does not leak credentials": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-006: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-006: response does not leak credentials": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-007: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-007: response does not leak credentials": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-008: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-008: response does not leak credentials": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-009: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-009: response does not leak credentials": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-010: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-010: response does not leak credentials": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-011: expected status": {
+					"pass": 0,
+					"fail": 1
+				},
+				"B1-011: response does not leak credentials": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-012: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-012: response does not leak credentials": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-013: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-013: response does not leak credentials": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-014: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-014: response does not leak credentials": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-015: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-015: response does not leak credentials": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-016: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-016: response does not leak credentials": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-016: checkout success schema": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-016: stored total is server-calculated": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-016: initial status is pending": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-017: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-017: response does not leak credentials": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-018: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-018: response does not leak credentials": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-019: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-019: response does not leak credentials": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-020: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-020: response does not leak credentials": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-020: checkout success schema": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-020: stored total is server-calculated": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-020: initial status is pending": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-021: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-021: response does not leak credentials": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-022: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-022: response does not leak credentials": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-023: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-023: response does not leak credentials": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-024: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-024: response does not leak credentials": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-024: checkout success schema": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-024: stored total is server-calculated": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-024: initial status is pending": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-025: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-025: response does not leak credentials": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-025: checkout success schema": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-025: stored total is server-calculated": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-025: initial status is pending": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-026: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-026: response does not leak credentials": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-026: checkout success schema": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-026: stored total is server-calculated": {
+					"pass": 0,
+					"fail": 1
+				},
+				"B1-026: initial status is pending": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-027: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-027: response does not leak credentials": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-027: checkout success schema": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-027: stored total is server-calculated": {
+					"pass": 0,
+					"fail": 1
+				},
+				"B1-027: initial status is pending": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-028: expected status": {
+					"pass": 0,
+					"fail": 1
+				},
+				"B1-028: response does not leak credentials": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-029: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-029: response does not leak credentials": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-029: checkout success schema": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-029: stored total is server-calculated": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-029: initial status is pending": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-030: expected status": {
+					"pass": 0,
+					"fail": 1
+				},
+				"B1-030: response does not leak credentials": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-031: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-031: response does not leak credentials": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-032: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-032: response does not leak credentials": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-032: checkout success schema": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-032: stored total is server-calculated": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-032: initial status is pending": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-033: expected status": {
+					"pass": 0,
+					"fail": 1
+				},
+				"B1-033: response does not leak credentials": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-033: no server error": {
+					"pass": 0,
+					"fail": 1
+				},
+				"B1-034: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-034: response does not leak credentials": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-035: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-035: response does not leak credentials": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-035: checkout success schema": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-035: stored total is server-calculated": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-035: initial status is pending": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-036: expected status": {
+					"pass": 0,
+					"fail": 1
+				},
+				"B1-036: response does not leak credentials": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-037: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-037: response does not leak credentials": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-037: checkout success schema": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-037: stored total is server-calculated": {
+					"pass": 0,
+					"fail": 1
+				},
+				"B1-037: initial status is pending": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-038: expected status": {
+					"pass": 0,
+					"fail": 1
+				},
+				"B1-038: response does not leak credentials": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-039: expected status": {
+					"pass": 0,
+					"fail": 1
+				},
+				"B1-039: response does not leak credentials": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-040: expected status": {
+					"pass": 1,
+					"fail": 0
+				},
+				"B1-040: response does not leak credentials": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7,
+				2,
+				2,
+				2,
+				2,
+				2,
+				3,
+				3,
+				3,
+				4,
+				4,
+				3,
+				4,
+				4,
+				2,
+				2,
+				2,
+				2,
+				2,
+				2,
+				2,
+				1,
+				2,
+				2,
+				2,
+				2,
+				2,
+				2,
+				3,
+				4,
+				3,
+				3,
+				4,
+				2,
+				2,
+				5,
+				3,
+				3,
+				3,
+				3
+			],
+			"allTests": [
+				{
+					"B1-001: expected status": true,
+					"B1-001: response does not leak credentials": true,
+					"B1-001: checkout success schema": true,
+					"B1-001: stored total is server-calculated": true,
+					"B1-001: initial status is pending": true
+				},
+				{
+					"B1-002: expected status": true,
+					"B1-002: response does not leak credentials": true
+				},
+				{
+					"B1-003: expected status": true,
+					"B1-003: response does not leak credentials": true
+				},
+				{
+					"B1-004: expected status": true,
+					"B1-004: response does not leak credentials": true
+				},
+				{
+					"B1-005: expected status": true,
+					"B1-005: response does not leak credentials": true
+				},
+				{
+					"B1-006: expected status": true,
+					"B1-006: response does not leak credentials": true
+				},
+				{
+					"B1-007: expected status": true,
+					"B1-007: response does not leak credentials": true
+				},
+				{
+					"B1-008: expected status": true,
+					"B1-008: response does not leak credentials": true
+				},
+				{
+					"B1-009: expected status": true,
+					"B1-009: response does not leak credentials": true
+				},
+				{
+					"B1-010: expected status": true,
+					"B1-010: response does not leak credentials": true
+				},
+				{
+					"B1-011: expected status": false,
+					"B1-011: response does not leak credentials": true
+				},
+				{
+					"B1-012: expected status": true,
+					"B1-012: response does not leak credentials": true
+				},
+				{
+					"B1-013: expected status": true,
+					"B1-013: response does not leak credentials": true
+				},
+				{
+					"B1-014: expected status": true,
+					"B1-014: response does not leak credentials": true
+				},
+				{
+					"B1-015: expected status": true,
+					"B1-015: response does not leak credentials": true
+				},
+				{
+					"B1-016: expected status": true,
+					"B1-016: response does not leak credentials": true,
+					"B1-016: checkout success schema": true,
+					"B1-016: stored total is server-calculated": true,
+					"B1-016: initial status is pending": true
+				},
+				{
+					"B1-017: expected status": true,
+					"B1-017: response does not leak credentials": true
+				},
+				{
+					"B1-018: expected status": true,
+					"B1-018: response does not leak credentials": true
+				},
+				{
+					"B1-019: expected status": true,
+					"B1-019: response does not leak credentials": true
+				},
+				{
+					"B1-020: expected status": true,
+					"B1-020: response does not leak credentials": true,
+					"B1-020: checkout success schema": true,
+					"B1-020: stored total is server-calculated": true,
+					"B1-020: initial status is pending": true
+				},
+				{
+					"B1-021: expected status": true,
+					"B1-021: response does not leak credentials": true
+				},
+				{
+					"B1-022: expected status": true,
+					"B1-022: response does not leak credentials": true
+				},
+				{
+					"B1-023: expected status": true,
+					"B1-023: response does not leak credentials": true
+				},
+				{
+					"B1-024: expected status": true,
+					"B1-024: response does not leak credentials": true,
+					"B1-024: checkout success schema": true,
+					"B1-024: stored total is server-calculated": true,
+					"B1-024: initial status is pending": true
+				},
+				{
+					"B1-025: expected status": true,
+					"B1-025: response does not leak credentials": true,
+					"B1-025: checkout success schema": true,
+					"B1-025: stored total is server-calculated": true,
+					"B1-025: initial status is pending": true
+				},
+				{
+					"B1-026: expected status": true,
+					"B1-026: response does not leak credentials": true,
+					"B1-026: checkout success schema": true,
+					"B1-026: stored total is server-calculated": false,
+					"B1-026: initial status is pending": true
+				},
+				{
+					"B1-027: expected status": true,
+					"B1-027: response does not leak credentials": true,
+					"B1-027: checkout success schema": true,
+					"B1-027: stored total is server-calculated": false,
+					"B1-027: initial status is pending": true
+				},
+				{
+					"B1-028: expected status": false,
+					"B1-028: response does not leak credentials": true
+				},
+				{
+					"B1-029: expected status": true,
+					"B1-029: response does not leak credentials": true,
+					"B1-029: checkout success schema": true,
+					"B1-029: stored total is server-calculated": true,
+					"B1-029: initial status is pending": true
+				},
+				{
+					"B1-030: expected status": false,
+					"B1-030: response does not leak credentials": true
+				},
+				{
+					"B1-031: expected status": true,
+					"B1-031: response does not leak credentials": true
+				},
+				{
+					"B1-032: expected status": true,
+					"B1-032: response does not leak credentials": true,
+					"B1-032: checkout success schema": true,
+					"B1-032: stored total is server-calculated": true,
+					"B1-032: initial status is pending": true
+				},
+				{
+					"B1-033: expected status": false,
+					"B1-033: response does not leak credentials": true,
+					"B1-033: no server error": false
+				},
+				{
+					"B1-034: expected status": true,
+					"B1-034: response does not leak credentials": true
+				},
+				{
+					"B1-035: expected status": true,
+					"B1-035: response does not leak credentials": true,
+					"B1-035: checkout success schema": true,
+					"B1-035: stored total is server-calculated": true,
+					"B1-035: initial status is pending": true
+				},
+				{
+					"B1-036: expected status": false,
+					"B1-036: response does not leak credentials": true
+				},
+				{
+					"B1-037: expected status": true,
+					"B1-037: response does not leak credentials": true,
+					"B1-037: checkout success schema": true,
+					"B1-037: stored total is server-calculated": false,
+					"B1-037: initial status is pending": true
+				},
+				{
+					"B1-038: expected status": false,
+					"B1-038: response does not leak credentials": true
+				},
+				{
+					"B1-039: expected status": false,
+					"B1-039: response does not leak credentials": true
+				},
+				{
+					"B1-040: expected status": true,
+					"B1-040: response does not leak credentials": true
+				}
+			]
+		}
+	],
+	"count": 40,
+	"totalTime": 110,
+	"collection": {
+		"requests": [
+			{
+				"id": "89ac8c42-06ad-44a6-b7c2-a19ffd00b3e9",
+				"method": "POST"
+			}
+		]
+	}
+}
