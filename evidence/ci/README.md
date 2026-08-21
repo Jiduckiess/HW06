@@ -14,4 +14,6 @@ Verified strict all-pass run: [GitHub Actions #32505802850](https://github.com/J
 
 Verified intentional failure: [GitHub Actions #32505900553](https://github.com/Jiduckiess/HW06/actions/runs/32505900553) for commit `1998d99`. Only the A1-001 expected-status oracle was changed from `200` to `201`; the endpoint correctly returned `200`, so the run failed as intended. The following commit restores `200`.
 
+Verified restored all-pass run: [GitHub Actions #32506035480](https://github.com/Jiduckiess/HW06/actions/runs/32506035480) for commit `473fd8f`.
+
 Save a screenshot of both runs in this folder before final submission.
