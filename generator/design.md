@@ -6,9 +6,7 @@ Given the SUT API specification, produce reviewable API test cases covering inpu
 
 ## Self-drawn diagram
 
-Create this diagram yourself in Draw.io, Figma, or Mermaid and export it to `generator/diagram.png`. It should show:
-
-`Specification → parser → endpoint/parameter extractor → coverage planner → LLM test generator → validator/deduplicator → human review → Postman/Newman artifacts`
+The editable Mermaid flow is in [diagram.md](diagram.md). Review it, make a small design or wording adjustment yourself, then use Mermaid Live Editor / Draw.io to export it as `generator/diagram.png` if a PNG is required by the submission form.
 
 ## Pseudocode
 
