@@ -117,9 +117,11 @@ Only report reproducible, genuine bugs. Attach an issue screenshot for each bug.
 ## 8. CI/CD report
 
 - Workflow: [.github/workflows/api-tests.yml](../.github/workflows/api-tests.yml)
-- Passing run: commit `<SHA>`, run link `<URL>`, screenshot `<path>`
-- Intentional failing run: commit `<SHA>`, run link `<URL>`, screenshot `<path>`
-- Restore/follow-up commit: `<SHA>`
+- Initial failing run: `fa69add` / `HW06 API tests #1` and manual run `#2` failed because the workflow did not check out the `eshop-sut` submodule.
+- Fix commit: `7bb12f3` — `fix(ci): checkout SUT submodule`.
+- Passing run: `HW06 API tests #3`, triggered by push of commit `7bb12f3` on `main`; **passed** in **30 seconds**.
+- Screenshot evidence: `<save the supplied green Actions screenshot as evidence/ci/ci-pass-7bb12f3.png>`.
+- Security note: CI uses GitHub Actions Secrets for runtime credentials and does not publish raw Newman reports, because raw reports may contain passwords or JWTs.
 
 ## 9. AI-driven API test generator
 

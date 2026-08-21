@@ -261,3 +261,13 @@ The first manually triggered Actions run failed because the outer repository sto
 **Output and human review**
 
 Updated `actions/checkout` with `submodules: recursive` so the GitHub runner receives `eshop-sut/backend` before dependency installation and SUT startup. The student must rerun the workflow after this commit and confirm that all four Actions Secrets are set.
+
+## AI-18 — CI pass evidence recorded
+
+**Trigger**
+
+The student supplied an Actions screenshot showing `HW06 API tests #3` passed after commit `7bb12f3`.
+
+**Output and human review**
+
+Updated the CI/CD section of [main-report.md](main-report.md) with the initial failure cause, fix commit, confirmed passing run, and 30-second duration. The screenshot is still only present in the conversation; the student must save it under `evidence/ci/ci-pass-7bb12f3.png` before final submission.
