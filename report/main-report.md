@@ -104,13 +104,15 @@ Add at least five AI-missed cases per API, especially security or state-transiti
 
 | Bug ID | Summary | Severity | GitHub issue | Screenshot | AI missed? |
 | --- | --- | --- | --- | --- | --- |
-| BUG-01 | Login response exposes `user.password` | High | `<add GitHub Issue URL>` | Newman log + `<add issue screenshot>` | No — schema assertion detected it |
-| BUG-02 | Checkout trusts client-supplied `total_amount` | Critical | `<add GitHub Issue URL>` | FR-08 Newman report, B1-026/B1-027/B1-037 | No — data-driven assertion detected it |
-| BUG-03 | Checkout accepts missing or `null` shipping address | High | `<add GitHub Issue URL>` | FR-08 Newman report, B1-011/B1-036/B1-039 | No — data-driven assertion detected it |
-| BUG-04 | `text/plain` JSON checkout input causes HTTP 500 | Medium | `<add GitHub Issue URL>` | FR-08 Newman report, B1-033 | No — robustness assertion detected it |
-| BUG-05 | Category create/update accepts missing, blank, or non-string names | High | `<add GitHub Issue URL>` | FR-14 Newman report, C1-007–C1-009/C1-013/C1-023–C1-024/C1-036–C1-037 | No — data-driven assertion detected it |
-| BUG-06 | Normal user can create, update, and delete categories | Critical | `<add GitHub Issue URL>` | FR-14 Newman report, C1-020/C1-028/C1-033 | No — authorization assertion detected it |
-| BUG-07 | Category parser/content-type failures expose a stack trace or return HTTP 500 | Medium | `<add GitHub Issue URL>` | FR-14 Newman report, C1-017/C1-018 | No — robustness assertion detected it |
+| BUG-01 | Login response exposes `user.password` | High | [Issue #1](https://github.com/Jiduckiess/HW06/issues/1) | Newman log + Issue screenshot | No — schema assertion detected it |
+| BUG-02 | Checkout trusts client-supplied `total_amount` | Critical | [Issue #2](https://github.com/Jiduckiess/HW06/issues/2) | FR-08 Newman evidence, B1-026/B1-027/B1-037 | No — data-driven assertion detected it |
+| BUG-03 | Checkout accepts missing or `null` shipping address | High | [Issue #3](https://github.com/Jiduckiess/HW06/issues/3) | FR-08 Newman evidence, B1-011/B1-036/B1-039 | No — data-driven assertion detected it |
+| BUG-04 | `text/plain` JSON checkout input causes HTTP 500 | Medium | [Issue #4](https://github.com/Jiduckiess/HW06/issues/4) | FR-08 Newman evidence, B1-033 | No — robustness assertion detected it |
+| BUG-05 | Category create/update accepts missing, blank, or non-string names | High | [Issue #5](https://github.com/Jiduckiess/HW06/issues/5) | FR-14 Newman evidence, C1-007–C1-009/C1-013/C1-023–C1-024/C1-036–C1-037 | No — data-driven assertion detected it |
+| BUG-06 | Normal user can create, update, and delete categories | Critical | [Issue #6](https://github.com/Jiduckiess/HW06/issues/6) | FR-14 Newman evidence, C1-020/C1-028/C1-033 | No — authorization assertion detected it |
+| BUG-07 | Category parser/content-type failures expose a stack trace or return HTTP 500 | Medium | [Issue #7](https://github.com/Jiduckiess/HW06/issues/7) | FR-14 Newman evidence, C1-017/C1-018 | No — robustness assertion detected it |
+
+Issue evidence index: [../evidence/github-issues.md](../evidence/github-issues.md).
 
 Only report reproducible, genuine bugs. Attach an issue screenshot for each bug.
 

@@ -271,3 +271,13 @@ The student supplied an Actions screenshot showing `HW06 API tests #3` passed af
 **Output and human review**
 
 Updated the CI/CD section of [main-report.md](main-report.md) with the initial failure cause, fix commit, confirmed passing run, and 30-second duration. The screenshot is still only present in the conversation; the student must save it under `evidence/ci/ci-pass-7bb12f3.png` before final submission.
+
+## AI-19 — GitHub Issues evidence recorded
+
+**Trigger**
+
+The student supplied screenshots showing all seven drafted bugs had been filed as GitHub Issues #1–#7.
+
+**Output and human review**
+
+Created [../evidence/github-issues.md](../evidence/github-issues.md) as the evidence index and replaced GitHub Issue placeholders in `main-report.md` with direct links. The Issue pages contain the screenshot evidence; the student should keep those Issues open and avoid publishing raw tokens/passwords in future attachments.
