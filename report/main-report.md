@@ -83,6 +83,7 @@ Add at least five AI-missed cases per API, especially security or state-transiti
 - FR-14 Newman HTML report: [../evidence/newman/fr14-newman-report.html](../evidence/newman/fr14-newman-report.html)
 - FR-14 Postman Run Results export: [../postman/data/fr-14/HW06 API Testing — 23127172.postman_test_run.json](../postman/data/fr-14/HW06%20API%20Testing%20%E2%80%94%2023127172.postman_test_run.json)
 - Header console screenshot: `<add Postman Console screenshot>`
+- Excel test cases and summary: [../excel/HW06_API_Test_Cases_and_Summary.xlsx](../excel/HW06_API_Test_Cases_and_Summary.xlsx)
 
 | API | Planned | Executed | Passed | Failed | Newman evidence |
 | --- | ---: | ---: | ---: | ---: | --- |
