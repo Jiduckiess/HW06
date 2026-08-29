@@ -28,7 +28,7 @@ Invalid/blank categories pollute reference data and can break product/category s
 
 - FR-14 cases C1-007–C1-009, C1-013, C1-023–C1-024, C1-036–C1-037.
 - [FR-14 execution report](../report/fr14-execution-report.md)
-- Attach: `<redacted Postman/Newman screenshot>`
+- Attached evidence: [BUG-05.png](BUG-05.png) (redacted Issue screenshot)
 
 ## Suggested fix
 

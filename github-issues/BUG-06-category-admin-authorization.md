@@ -30,7 +30,7 @@ Any authenticated customer can alter shared catalog reference data, causing inte
 
 - FR-14 cases C1-020, C1-028, C1-033.
 - [FR-14 execution report](../report/fr14-execution-report.md)
-- Attach: `<redacted normal-user JWT/Postman screenshot>`
+- Attached evidence: [BUG-06.png](BUG-06.png) (redacted Issue screenshot)
 
 ## Suggested fix
 

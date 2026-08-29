@@ -28,7 +28,7 @@ Orders can be created without a deliverable address, causing fulfilment failures
 
 - FR-08 cases B1-011, B1-036, B1-039.
 - [FR-08 execution report](../report/fr08-execution-report.md)
-- Attach: `<redacted Postman/Newman screenshot>`
+- Attached evidence: [BUG-03.png](BUG-03.png) (redacted Issue screenshot)
 
 ## Suggested fix
 

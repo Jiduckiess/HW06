@@ -29,7 +29,7 @@ Implementation details help attackers fingerprint the application and turn routi
 
 - FR-14 cases C1-017 and C1-018.
 - [FR-14 execution report](../report/fr14-execution-report.md)
-- Attach: `<redacted error-response screenshot>`
+- Attached evidence: [BUG-07.png](BUG-07.png) (redacted Issue screenshot)
 
 ## Suggested fix
 

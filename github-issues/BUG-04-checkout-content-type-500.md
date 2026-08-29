@@ -29,7 +29,7 @@ Malformed client transport can trigger a server exception, reduces API reliabili
 
 - FR-08 case B1-033.
 - [FR-08 execution report](../report/fr08-execution-report.md)
-- Attach: `<redacted response screenshot>`
+- Attached evidence: [BUG-04.png](BUG-04.png) (redacted Issue screenshot)
 
 ## Suggested fix
 

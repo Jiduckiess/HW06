@@ -1,0 +1,26 @@
+# Git Commit Log — HW06
+
+Generated before final evidence packaging with:
+
+```bash
+git log --pretty=format:'%h | %ad | %an | %s' --date=iso
+```
+
+```text
+7128559 | 2026-08-22 20:10:05 +0700 | jiduckiess | docs: add Excel test case workbook and summary
+fc7648d | 2026-08-22 00:15:20 +0700 | jiduckiess | docs(generator): add editable Mermaid design diagram
+7ee7ef1 | 2026-08-22 00:03:30 +0700 | jiduckiess | docs(ci): record strict pass and failure samples
+473fd8f | 2026-08-22 00:02:11 +0700 | jiduckiess | fix(ci): restore passing assertion after failure sample
+1998d99 | 2026-08-22 00:00:40 +0700 | jiduckiess | test(ci): demonstrate intentional assertion failure
+1e6e571 | 2026-08-21 23:59:27 +0700 | jiduckiess | fix(ci): add strict remediated Newman baseline
+70c6837 | 2026-08-21 23:27:18 +0700 | jiduckiess | docs: link filed GitHub Issues as evidence
+57015c4 | 2026-08-21 23:24:02 +0700 | jiduckiess | docs: record successful CI workflow run
+7bb12f3 | 2026-08-21 23:19:43 +0700 | jiduckiess | fix(ci): checkout SUT submodule
+fa69add | 2026-08-21 22:50:25 +0700 | jiduckiess | ci: run Newman suites in GitHub Actions
+f98dae9 | 2026-08-21 22:49:03 +0700 | jiduckiess | test(pool-c): add FR-14 category CRUD test suite and evidence
+a436eaa | 2026-08-21 22:48:43 +0700 | jiduckiess | test(pool-b): add FR-08 checkout test suite and evidence
+42636b9 | 2026-08-21 22:48:11 +0700 | jiduckiess | test(pool-a): add FR-02 login test suite and evidence
+99e8d30 | 2026-08-21 22:43:53 +0700 | jiduckiess | chore: bootstrap HW06 API testing project
+```
+
+The next commit packages the PDFs, screenshots, issue evidence index, and final report updates.

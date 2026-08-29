@@ -125,7 +125,7 @@ The AI read the execution artifacts and drafted `report/fr02-execution-report.md
 
 **Human review**
 
-The metrics were checked against the Postman Run Results export (`status: finished`, `totalPass: 75`, `totalFail: 5`) and the Newman terminal log. The password-disclosure finding is documented as BUG-01, but must be filed by the student on GitHub with a real, redacted screenshot before it is considered complete.
+The metrics were checked against the Postman Run Results export (`status: finished`, `totalPass: 75`, `totalFail: 5`) and the Newman terminal log. The password-disclosure finding was filed as [GitHub Issue #1](https://github.com/Jiduckiess/HW06/issues/1); its redacted local screenshot is [BUG-01.png](../github-issues/BUG-01.png).
 
 ## AI-08 — Audit update
 
@@ -252,7 +252,7 @@ hãy push tạm lần lượt theo từng pool một lên GitHub và tôi còn m
 
 **Output and human review**
 
-Initialized the outer repository, configured the supplied GitHub remote, and pushed separate commits for Pool A/FR-02, Pool B/FR-08, and Pool C/FR-14. Added `.github/workflows/api-tests.yml`: it installs the backend/Newman, initializes and starts the SUT, then runs each pool with its data file. Plaintext seed credentials and sensitive local Newman HTML exports were deliberately kept out of Git; CI does not upload raw reports because they can contain passwords/JWTs. The workflow reads `ADMIN_EMAIL`, `ADMIN_PASSWORD`, `TEST_USER_EMAIL`, and `TEST_USER_PASSWORD` from GitHub Secrets. The student must add those Secrets, open the Actions run, and capture a real redacted workflow screenshot for the final report.
+Initialized the outer repository, configured the supplied GitHub remote, and pushed separate commits for Pool A/FR-02, Pool B/FR-08, and Pool C/FR-14. Added `.github/workflows/api-tests.yml`: it installs the backend/Newman, initializes and starts the SUT, then runs each pool with its data file. Plaintext seed credentials and sensitive local Newman HTML exports were deliberately kept out of Git; CI does not upload raw reports because they can contain passwords/JWTs. The workflow reads `ADMIN_EMAIL`, `ADMIN_PASSWORD`, `TEST_USER_EMAIL`, and `TEST_USER_PASSWORD` from GitHub Secrets. The subsequent strict CI runs and redacted screenshots are recorded in [main-report.md](main-report.md).
 
 ## AI-17 — CI submodule checkout correction
 
@@ -262,7 +262,7 @@ The first manually triggered Actions run failed because the outer repository sto
 
 **Output and human review**
 
-Updated `actions/checkout` with `submodules: recursive` so the GitHub runner receives `eshop-sut/backend` before dependency installation and SUT startup. The student must rerun the workflow after this commit and confirm that all four Actions Secrets are set.
+Updated `actions/checkout` with `submodules: recursive` so the GitHub runner receives `eshop-sut/backend` before dependency installation and SUT startup. The subsequent strict workflow runs confirm that the CI job can obtain the SUT and execute the suites.
 
 ## AI-18 — CI pass evidence recorded
 
@@ -272,7 +272,7 @@ The student supplied an Actions screenshot showing `HW06 API tests #3` passed af
 
 **Output and human review**
 
-Updated the CI/CD section of [main-report.md](main-report.md) with the initial failure cause, fix commit, confirmed passing run, and 30-second duration. The screenshot is still only present in the conversation; the student must save it under `evidence/ci/ci-pass-7bb12f3.png` before final submission.
+Updated the CI/CD section of [main-report.md](main-report.md) with the initial failure cause, fix commit, confirmed passing run, and 30-second duration. Later strict all-pass and intentional-one-failure screenshots are committed under [../evidence/ci/](../evidence/ci/).
 
 ## AI-19 — GitHub Issues evidence recorded
 
@@ -282,4 +282,4 @@ The student supplied screenshots showing all seven drafted bugs had been filed a
 
 **Output and human review**
 
-Created [../evidence/github-issues.md](../evidence/github-issues.md) as the evidence index and replaced GitHub Issue placeholders in `main-report.md` with direct links. The Issue pages contain the screenshot evidence; the student should keep those Issues open and avoid publishing raw tokens/passwords in future attachments.
+Created [../evidence/github-issues.md](../evidence/github-issues.md) as the evidence index and replaced GitHub Issue placeholders in `main-report.md` with direct links. The repository now also stores redacted local PNG copies under [../github-issues/](../github-issues/). The student should keep those Issues open and avoid publishing raw tokens/passwords in future attachments.

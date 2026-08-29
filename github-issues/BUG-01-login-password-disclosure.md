@@ -28,7 +28,7 @@ Any client, proxy log, browser extension, or compromised frontend that receives 
 
 - FR-02 Newman assertions: A1-001, A1-023, A1-035, A1-038, A1-040.
 - [FR-02 execution report](../report/fr02-execution-report.md)
-- Attach: `<redacted Postman/Newman screenshot showing user.password>`
+- Attached evidence: [BUG-01.png](BUG-01.png) (redacted Issue screenshot)
 
 ## Suggested fix
 

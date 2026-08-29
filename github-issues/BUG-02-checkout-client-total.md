@@ -30,7 +30,7 @@ An authenticated attacker can buy products for an arbitrary price or corrupt ord
 
 - FR-08 cases B1-026, B1-027, B1-037.
 - [FR-08 execution report](../report/fr08-execution-report.md)
-- Attach: `<redacted request/created-order screenshot>`
+- Attached evidence: [BUG-02.png](BUG-02.png) (redacted Issue screenshot)
 
 ## Suggested fix
 
