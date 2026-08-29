@@ -1,26 +1,225 @@
-# Git Commit Log — HW06
+# Git Commit Graph and Statistics — HW06
 
-Generated before final evidence packaging with:
+Command executed on 2026-08-29:
 
 ```bash
-git log --pretty=format:'%h | %ad | %an | %s' --date=iso
+git log --graph --all --stat
 ```
 
 ```text
-7128559 | 2026-08-22 20:10:05 +0700 | jiduckiess | docs: add Excel test case workbook and summary
-fc7648d | 2026-08-22 00:15:20 +0700 | jiduckiess | docs(generator): add editable Mermaid design diagram
-7ee7ef1 | 2026-08-22 00:03:30 +0700 | jiduckiess | docs(ci): record strict pass and failure samples
-473fd8f | 2026-08-22 00:02:11 +0700 | jiduckiess | fix(ci): restore passing assertion after failure sample
-1998d99 | 2026-08-22 00:00:40 +0700 | jiduckiess | test(ci): demonstrate intentional assertion failure
-1e6e571 | 2026-08-21 23:59:27 +0700 | jiduckiess | fix(ci): add strict remediated Newman baseline
-70c6837 | 2026-08-21 23:27:18 +0700 | jiduckiess | docs: link filed GitHub Issues as evidence
-57015c4 | 2026-08-21 23:24:02 +0700 | jiduckiess | docs: record successful CI workflow run
-7bb12f3 | 2026-08-21 23:19:43 +0700 | jiduckiess | fix(ci): checkout SUT submodule
-fa69add | 2026-08-21 22:50:25 +0700 | jiduckiess | ci: run Newman suites in GitHub Actions
-f98dae9 | 2026-08-21 22:49:03 +0700 | jiduckiess | test(pool-c): add FR-14 category CRUD test suite and evidence
-a436eaa | 2026-08-21 22:48:43 +0700 | jiduckiess | test(pool-b): add FR-08 checkout test suite and evidence
-42636b9 | 2026-08-21 22:48:11 +0700 | jiduckiess | test(pool-a): add FR-02 login test suite and evidence
-99e8d30 | 2026-08-21 22:43:53 +0700 | jiduckiess | chore: bootstrap HW06 API testing project
+* commit 5095243720b24cf42d730b72447e2662e7a99f15
+| Author: jiduckiess <nguyenchiduc11022005@gmail.com>
+| Date:   Sat Aug 29 09:26:04 2026 +0700
+| 
+|     docs: package final evidence and PDF reports
+| 
+|  README.md                                         |  12 +-
+|  evidence/ci/all-passed.png                        | Bin 0 -> 230959 bytes
+|  evidence/ci/one-failed.png                        | Bin 0 -> 282032 bytes
+|  evidence/github-issues.md                         |  18 +-
+|  evidence/postman/console-postman1.png             | Bin 0 -> 651384 bytes
+|  evidence/postman/console-postman2.png             | Bin 0 -> 587399 bytes
+|  git-commit-log.txt                                |  26 +++
+|  github-issues/BUG-01-login-password-disclosure.md |   2 +-
+|  github-issues/BUG-01.png                          | Bin 0 -> 327100 bytes
+|  github-issues/BUG-02-checkout-client-total.md     |   2 +-
+|  github-issues/BUG-02.png                          | Bin 0 -> 284924 bytes
+|  .../BUG-03-checkout-address-validation.md         |   2 +-
+|  github-issues/BUG-03.png                          | Bin 0 -> 256344 bytes
+|  github-issues/BUG-04-checkout-content-type-500.md |   2 +-
+|  github-issues/BUG-04.png                          | Bin 0 -> 219691 bytes
+|  github-issues/BUG-05-category-name-validation.md  |   2 +-
+|  github-issues/BUG-05.png                          | Bin 0 -> 320655 bytes
+|  .../BUG-06-category-admin-authorization.md        |   2 +-
+|  github-issues/BUG-06.png                          | Bin 0 -> 283980 bytes
+|  .../BUG-07-category-parser-error-disclosure.md    |   2 +-
+|  github-issues/BUG-07.png                          | Bin 0 -> 279083 bytes
+|  github-issues/README.md                           |  27 +--
+|  output/pdf/HW06_AI_Audit_Report.pdf               | 244 ++++++++++++++++++++
+|  output/pdf/HW06_Main_Report.pdf                   | 181 +++++++++++++++
+|  report/ai-audit-report.md                         |  10 +-
+|  report/main-report.md                             |  41 ++--
+|  scripts/build-pdf-reports.py                      | 139 +++++++++++
+|  27 files changed, 654 insertions(+), 58 deletions(-)
+| 
+* commit 7128559e92871ec5e02f418a683eb676130eae7a
+| Author: jiduckiess <nguyenchiduc11022005@gmail.com>
+| Date:   Sat Aug 22 20:10:05 2026 +0700
+| 
+|     docs: add Excel test case workbook and summary
+| 
+|  excel/HW06_API_Test_Cases_and_Summary.xlsx | Bin 0 -> 29863 bytes
+|  report/main-report.md                      |   1 +
+|  scripts/build-test-cases-workbook.cjs      | 145 +++++++++++++++++++++++++++
+|  3 files changed, 146 insertions(+)
+| 
+* commit fc7648d36414646be5467cdafa4d0a5c5b391869
+| Author: jiduckiess <nguyenchiduc11022005@gmail.com>
+| Date:   Sat Aug 22 00:15:20 2026 +0700
+| 
+|     docs(generator): add editable Mermaid design diagram
+| 
+|  generator/design.md  |  4 +---
+|  generator/diagram.md | 34 ++++++++++++++++++++++++++++++++++
+|  2 files changed, 35 insertions(+), 3 deletions(-)
+| 
+* commit 7ee7ef1c2d2a99b77953fb3ad6829e1776901933
+| Author: jiduckiess <nguyenchiduc11022005@gmail.com>
+| Date:   Sat Aug 22 00:03:30 2026 +0700
+| 
+|     docs(ci): record strict pass and failure samples
+| 
+|  evidence/ci/README.md | 2 ++
+|  report/main-report.md | 2 +-
+|  2 files changed, 3 insertions(+), 1 deletion(-)
+| 
+* commit 473fd8f38ab42781888c9c345ba02eb26d90869f
+| Author: jiduckiess <nguyenchiduc11022005@gmail.com>
+| Date:   Sat Aug 22 00:02:11 2026 +0700
+| 
+|     fix(ci): restore passing assertion after failure sample
+| 
+|  evidence/ci/README.md             | 6 +++++-
+|  postman/data/fr-02/fr02-data.json | 2 +-
+|  report/ai-audit-report.md         | 1 +
+|  report/main-report.md             | 4 ++--
+|  4 files changed, 9 insertions(+), 4 deletions(-)
+| 
+* commit 1998d996a63e939f0fb4a44fdf7f42d3b9e29579
+| Author: jiduckiess <nguyenchiduc11022005@gmail.com>
+| Date:   Sat Aug 22 00:00:40 2026 +0700
+| 
+|     test(ci): demonstrate intentional assertion failure
+| 
+|  postman/data/fr-02/fr02-data.json | 2 +-
+|  1 file changed, 1 insertion(+), 1 deletion(-)
+| 
+* commit 1e6e5710a7ce8ea3ea4d218ad035f4862f8ada31
+| Author: jiduckiess <nguyenchiduc11022005@gmail.com>
+| Date:   Fri Aug 21 23:59:27 2026 +0700
+| 
+|     fix(ci): add strict remediated Newman baseline
+| 
+|  .github/workflows/api-tests.yml                  |  36 ++++-
+|  ci/sut-fixes.patch                               | 161 +++++++++++++++++++++
+|  evidence/ci/README.md                            |  13 ++
+|  postman/HW06_API_Testing.postman_collection.json |  48 +++---
+|  report/ai-audit-report.md                        |   1 +
+|  report/main-report.md                            |   6 +-
+|  6 files changed, 238 insertions(+), 27 deletions(-)
+| 
+* commit 70c6837675c2622336c7cba7aa7d9d1443bbb48e
+| Author: jiduckiess <nguyenchiduc11022005@gmail.com>
+| Date:   Fri Aug 21 23:27:18 2026 +0700
+| 
+|     docs: link filed GitHub Issues as evidence
+| 
+|  evidence/github-issues.md | 15 +++++++++++++++
+|  report/ai-audit-report.md | 10 ++++++++++
+|  report/main-report.md     | 16 +++++++++-------
+|  3 files changed, 34 insertions(+), 7 deletions(-)
+| 
+* commit 57015c41f8d42c1129452a3610a810ec5ec149fe
+| Author: jiduckiess <nguyenchiduc11022005@gmail.com>
+| Date:   Fri Aug 21 23:24:02 2026 +0700
+| 
+|     docs: record successful CI workflow run
+| 
+|  report/ai-audit-report.md | 10 ++++++++++
+|  report/main-report.md     |  8 +++++---
+|  2 files changed, 15 insertions(+), 3 deletions(-)
+| 
+* commit 7bb12f3dac0c03fd19c0963cb9f20f8b1391c774
+| Author: jiduckiess <nguyenchiduc11022005@gmail.com>
+| Date:   Fri Aug 21 23:19:43 2026 +0700
+| 
+|     fix(ci): checkout SUT submodule
+| 
+|  .github/workflows/api-tests.yml |  2 ++
+|  report/ai-audit-report.md       | 10 ++++++++++
+|  2 files changed, 12 insertions(+)
+| 
+* commit fa69add2b2da8e1b6929c89ac0e008f950d762ed
+| Author: jiduckiess <nguyenchiduc11022005@gmail.com>
+| Date:   Fri Aug 21 22:50:25 2026 +0700
+| 
+|     ci: run Newman suites in GitHub Actions
+| 
+|  .github/workflows/api-tests.yml                   |  80 +++++++
+|  github-issues/BUG-01-login-password-disclosure.md |  39 +++
+|  github-issues/BUG-02-checkout-client-total.md     |  41 ++++
+|  .../BUG-03-checkout-address-validation.md         |  39 +++
+|  github-issues/BUG-04-checkout-content-type-500.md |  40 ++++
+|  github-issues/BUG-05-category-name-validation.md  |  39 +++
+|  .../BUG-06-category-admin-authorization.md        |  41 ++++
+|  .../BUG-07-category-parser-error-disclosure.md    |  40 ++++
+|  github-issues/README.md                           |  15 ++
+|  report/ai-audit-report.md                         | 253 ++++++++++++++++++++
+|  report/main-report.md                             | 136 +++++++++++
+|  11 files changed, 763 insertions(+)
+| 
+* commit f98dae945d6b88420c4e10602bc01bf657a10864
+| Author: jiduckiess <nguyenchiduc11022005@gmail.com>
+| Date:   Fri Aug 21 22:49:03 2026 +0700
+| 
+|     test(pool-c): add FR-14 category CRUD test suite and evidence
+| 
+|  evidence/postman/fr-14.png                        | Bin 0 -> 535514 bytes
+|  ...g \342\200\224 23127172.postman_test_run.json" | 627 ++++++++++++++++++++
+|  postman/data/fr-14/README.md                      |  16 +
+|  postman/data/fr-14/fr14-data.json                 |  42 ++
+|  report/fr14-execution-report.md                   |  53 ++
+|  scripts/run-fr14-newman.sh                        |  14 +
+|  test-cases/api-3.md                               |  72 +++
+|  7 files changed, 824 insertions(+)
+| 
+* commit a436eaa73062355ae224da956bf7d5c7ccf32c08
+| Author: jiduckiess <nguyenchiduc11022005@gmail.com>
+| Date:   Fri Aug 21 22:48:43 2026 +0700
+| 
+|     test(pool-b): add FR-08 checkout test suite and evidence
+| 
+|  evidence/postman/fr-08.png                        | Bin 0 -> 508986 bytes
+|  ...g \342\200\224 23127172.postman_test_run.json" | 736 ++++++++++++++++++++
+|  postman/data/fr-08/README.md                      |  32 +
+|  postman/data/fr-08/fr08-data.json                 |  42 ++
+|  report/fr08-execution-report.md                   |  53 ++
+|  scripts/run-fr08-newman.sh                        |  14 +
+|  test-cases/api-2.md                               |  83 +++
+|  7 files changed, 960 insertions(+)
+| 
+* commit 42636b96f1f069de236c118f37e0ac29f3c625f7
+| Author: jiduckiess <nguyenchiduc11022005@gmail.com>
+| Date:   Fri Aug 21 22:48:11 2026 +0700
+| 
+|     test(pool-a): add FR-02 login test suite and evidence
+| 
+|  .gitignore                                        |   1 +
+|  evidence/postman/fr-02.png                        | Bin 0 -> 330001 bytes
+|  evidence/terminal/FR-02.txt                       | 460 ++++++++++++++++
+|  .../HW06.local.postman_environment.example.json   |  11 +
+|  postman/HW06_API_Testing.postman_collection.json  | 174 ++++++
+|  ...g \342\200\224 23127172.postman_test_run.json" | 566 ++++++++++++++++++++
+|  postman/data/fr-02/fr02-data.json                 |  42 ++
+|  ...g \342\200\224 23127172.postman_test_run.json" | 566 ++++++++++++++++++++
+|  report/fr02-execution-report.md                   |  50 ++
+|  test-cases/api-1.md                               |  85 +++
+|  10 files changed, 1955 insertions(+)
+| 
+* commit 99e8d3050ae362cb42394c833fe8758a79bbd785
+  Author: jiduckiess <nguyenchiduc11022005@gmail.com>
+  Date:   Fri Aug 21 22:43:53 2026 +0700
+  
+      chore: bootstrap HW06 API testing project
+  
+   .gitignore                                  |   3 +
+   .gitmodules                                 |   3 +
+   2026.HW06.API Testing_En.md                 | 186 ++++++++++++++++++++++++++
+   README.md                                   |  36 +++++
+   eshop-sut                                   |   1 +
+   evidence/README.md                          |   6 +
+   generator/design.md                         |  42 ++++++
+   postman/HW06.local.postman_environment.json |  11 ++
+   postman/results/README.md                   |   3 +
+   9 files changed, 291 insertions(+)
 ```
-
-The next commit packages the PDFs, screenshots, issue evidence index, and final report updates.

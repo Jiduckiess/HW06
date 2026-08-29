@@ -12,6 +12,8 @@ from reportlab.lib.enums import TA_CENTER
 from reportlab.lib.pagesizes import A4, landscape
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import mm
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.platypus import (
     KeepTogether,
     Paragraph,
@@ -23,13 +25,29 @@ from reportlab.platypus import (
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "output" / "pdf"
+FONT_DIR = Path("/System/Library/Fonts/Supplemental")
+UNICODE_FONT_DIR = Path("/private/tmp/hw06-fonts/dejavu/dejavu-fonts-ttf-2.37/ttf")
+
+pdfmetrics.registerFont(TTFont("Arial", str(FONT_DIR / "Arial.ttf")))
+pdfmetrics.registerFont(TTFont("Arial-Bold", str(FONT_DIR / "Arial Bold.ttf")))
+pdfmetrics.registerFont(TTFont("Arial-Italic", str(FONT_DIR / "Arial Italic.ttf")))
+pdfmetrics.registerFontFamily("Arial", normal="Arial", bold="Arial-Bold", italic="Arial-Italic", boldItalic="Arial-Bold")
+pdfmetrics.registerFont(TTFont("DejaVuSans", str(UNICODE_FONT_DIR / "DejaVuSans.ttf")))
+pdfmetrics.registerFont(TTFont("DejaVuSans-Bold", str(UNICODE_FONT_DIR / "DejaVuSans-Bold.ttf")))
+pdfmetrics.registerFontFamily("DejaVuSans", normal="DejaVuSans", bold="DejaVuSans-Bold", italic="DejaVuSans", boldItalic="DejaVuSans-Bold")
 
 
 def inline(text: str) -> str:
     """Escape Markdown text and preserve the few inline styles used in the reports."""
     text = html.escape(text)
-    text = re.sub(r"`([^`]+)`", r'<font name="Courier">\1</font>', text)
-    text = re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", text)
+    def code_span(match):
+        value = match.group(1)
+        return f'<font name="Courier">{value}</font>' if value.isascii() else value
+
+    text = re.sub(r"`([^`]+)`", code_span, text)
+    # Keep Markdown bold as plain text: ReportLab's inline bold reset can switch
+    # back to a non-Unicode base font after a bold span.
+    text = re.sub(r"\*\*(.+?)\*\*", r"\1", text)
     text = re.sub(r"\[(.*?)\]\([^)]*\)", r"\1", text)
     return text
 
@@ -75,14 +93,14 @@ def make_table(raw: list[str], styles, available_width: float):
 def build(source: Path, target: Path, title: str):
     styles_base = getSampleStyleSheet()
     styles = {
-        "title": ParagraphStyle("Title", parent=styles_base["Title"], fontName="Helvetica-Bold", fontSize=19, leading=24, textColor=colors.HexColor("#12304A"), alignment=TA_CENTER, spaceAfter=12),
-        "h1": ParagraphStyle("H1", parent=styles_base["Heading1"], fontName="Helvetica-Bold", fontSize=14, leading=18, textColor=colors.HexColor("#12304A"), spaceBefore=12, spaceAfter=6),
-        "h2": ParagraphStyle("H2", parent=styles_base["Heading2"], fontName="Helvetica-Bold", fontSize=11.5, leading=14, textColor=colors.HexColor("#164C73"), spaceBefore=9, spaceAfter=4),
-        "body": ParagraphStyle("Body", parent=styles_base["BodyText"], fontName="Helvetica", fontSize=8.3, leading=11.2, spaceAfter=4),
-        "bullet": ParagraphStyle("Bullet", parent=styles_base["BodyText"], fontName="Helvetica", fontSize=8.3, leading=11.2, leftIndent=13, firstLineIndent=-8, spaceAfter=3),
-        "quote": ParagraphStyle("Quote", parent=styles_base["BodyText"], fontName="Helvetica-Oblique", fontSize=8, leading=10.4, leftIndent=10, textColor=colors.HexColor("#455A64"), spaceAfter=4),
-        "table_header": ParagraphStyle("TableHeader", parent=styles_base["BodyText"], fontName="Helvetica-Bold", fontSize=6.4, leading=7.5, textColor=colors.white),
-        "table_body": ParagraphStyle("TableBody", parent=styles_base["BodyText"], fontName="Helvetica", fontSize=6.2, leading=7.2),
+        "title": ParagraphStyle("Title", parent=styles_base["Title"], fontName="DejaVuSans-Bold", fontSize=19, leading=24, textColor=colors.HexColor("#12304A"), alignment=TA_CENTER, spaceAfter=12),
+        "h1": ParagraphStyle("H1", parent=styles_base["Heading1"], fontName="DejaVuSans-Bold", fontSize=14, leading=18, textColor=colors.HexColor("#12304A"), spaceBefore=12, spaceAfter=6),
+        "h2": ParagraphStyle("H2", parent=styles_base["Heading2"], fontName="DejaVuSans-Bold", fontSize=11.5, leading=14, textColor=colors.HexColor("#164C73"), spaceBefore=9, spaceAfter=4),
+        "body": ParagraphStyle("Body", parent=styles_base["BodyText"], fontName="DejaVuSans", fontSize=8.3, leading=11.2, spaceAfter=4),
+        "bullet": ParagraphStyle("Bullet", parent=styles_base["BodyText"], fontName="DejaVuSans", fontSize=8.3, leading=11.2, leftIndent=13, firstLineIndent=-8, spaceAfter=3),
+        "quote": ParagraphStyle("Quote", parent=styles_base["BodyText"], fontName="DejaVuSans", fontSize=8, leading=10.4, leftIndent=10, textColor=colors.HexColor("#455A64"), spaceAfter=4),
+        "table_header": ParagraphStyle("TableHeader", parent=styles_base["BodyText"], fontName="DejaVuSans-Bold", fontSize=6.4, leading=7.5, textColor=colors.white),
+        "table_body": ParagraphStyle("TableBody", parent=styles_base["BodyText"], fontName="DejaVuSans", fontSize=6.2, leading=7.2),
     }
     page = landscape(A4)
     margin = 12 * mm
@@ -124,7 +142,7 @@ def build(source: Path, target: Path, title: str):
 
     def footer(canvas, document):
         canvas.saveState()
-        canvas.setFont("Helvetica", 7)
+        canvas.setFont("DejaVuSans", 7)
         canvas.setFillColor(colors.HexColor("#64748B"))
         canvas.drawString(document.leftMargin, 8 * mm, "HW06 API Testing — Student ID 23127172")
         canvas.drawRightString(page[0] - document.rightMargin, 8 * mm, f"Page {document.page}")

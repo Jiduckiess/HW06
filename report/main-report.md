@@ -1,6 +1,6 @@
 # HW06 API Testing Report
 
-**Student:** `<FULL_NAME>` (`23127172`)  
+**Student:** `Nguyễn Chí Đức` (`23127172`)
 **Repository:** [https://github.com/Jiduckiess/HW06](https://github.com/Jiduckiess/HW06)
 
 **SUT deployment:** `http://localhost:3000`

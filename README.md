@@ -1,7 +1,7 @@
 # HW06 — API Testing
 
 > Student ID: `23127172`  
-> Name: `<FULL_NAME>`  
+> Name: `Nguyễn Chí Đức`
 > Repository: [https://github.com/Jiduckiess/HW06](https://github.com/Jiduckiess/HW06)
 
 ## API selection
@@ -27,10 +27,10 @@
 
 | Criterion | Max | Self-assessed |
 | --- | ---: | ---: |
-| API 1 — full pipeline | 30 | |
-| API 2 — full pipeline | 30 | |
-| API 3 — full pipeline | 30 | |
-| AI-driven test generator | 10 | |
-| **Total** | **100** | |
+| API 1 — full pipeline | 30 | 30 |
+| API 2 — full pipeline | 30 | 30 |
+| API 3 — full pipeline | 30 | 30 |
+| AI-driven test generator | 10 | 10 |
+| **Total** | **100** | **100** |
 
 See [report/main-report.md](report/main-report.md) for the complete report.
